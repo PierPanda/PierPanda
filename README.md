@@ -1,5 +1,4 @@
 <h1 align="center">
-  <img src="https://raw.githubusercontent.com/PierPanda/PierPanda/main/assets/banner_mockup.png" alt="Bienvenue à l'espace de PierPanda, Développeur Full-Stack" />
   <br>
   👋 Salut ! Je suis Pierre, alias PierPanda
 </h1>
