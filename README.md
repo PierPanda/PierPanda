@@ -3,7 +3,7 @@
   👋 Salut ! Je suis Pierre, alias PierPanda
 </h1>
 
-<h3 align="center">🔥 Créateur d'Applications Full-Stack, Expert React & Node.js 🔥</h3>
+<h3 align="center">🔥 Développeur Front-end / Full-Stack, React & Node.js 🔥</h3>
 
 <p align="center">
   Mon objectif : Transformer les défis techniques complexes en solutions web <b>performantes</b>, <b>maintenables</b> et <b>intuitives</b>. Je construis la stack moderne : du serveur Node.js rapide à l'interface utilisateur React élégante.
