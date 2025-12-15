@@ -25,9 +25,9 @@
 
 | Projet | Description | Stack Principal | Statut |
 | :--- | :--- | :--- | :--- |
-| **BG Cleaner** | 🖼️ Outil Web pour la suppression et l'édition rapide d'arrière-plans d'images. | React, Tailwind CSS, Vercel | <a href="https://bgcleaner.vercel.app/">[Démo en ligne]</a> |
-| **Astro** | 🖼️ Explorez les merveilles de notre système solaire. | Vite, Javascript, Tailwind CSS, Vercel | <a href="[https://www.plai.fr/](https://astro-three-flax.vercel.app/)">[Démo en ligne]</a> |
-| **Plai (vitrine)** | 🖼️ Plateforme de streaming libre de droit. | React, Tailwind CSS, Vercel | <a href="https://www.plai.fr/">[Démo en ligne]</a> |
+| **BG Cleaner** | 🖼️ Outil Web pour la suppression et l'édition rapide d'arrière-plans d'images. | React, Tailwind CSS, Vercel | <a href="https://bgcleaner.vercel.app/">[Ouvrir]</a> |
+| **Astro** | 🖼️ Explorez les merveilles de notre système solaire. | Vite, Javascript, Tailwind CSS, Vercel | <a href="[https://www.plai.fr/](https://astro-three-flax.vercel.app/)">[Ouvrir]</a> |
+| **Plai (vitrine)** | 🖼️ Plateforme de streaming libre de droit. | React, Tailwind CSS, Vercel | <a href="https://www.plai.fr/">[Ouvrir]</a> |
 <br>
 
 <h2 align="center">🛠️ Stack & Outils Maîtrisés</h2>
