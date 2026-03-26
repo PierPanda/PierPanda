@@ -40,7 +40,9 @@
 | **Plai (vitrine)** | Plateforme de streaming libre de droit. | React, Tailwind CSS, Vercel | <a href="https://www.plai.fr/">Ouvrir</a> |
 <br>
 
-<h2 align="center"><img src="https://api.iconify.design/nimbus/tools.svg?color=%23ffffff" width="24" /> Stack & Outils Maîtrisés</h2>
+---
+
+<h3 align="center"><img src="https://api.iconify.design/nimbus/tools.svg?color=%23ffffff" width="24" /> Stack & Outils Maîtrisés</h3>
 
 <p align="center">
   <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" roounded=full/>
@@ -63,6 +65,8 @@
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
 </p>
+
+---
 
 <h3 align="center"><img src="https://api.iconify.design/streamline-logos/kakao-talk-logo.svg?color=%23ffffff" width="24" /> Parlons Code !</h3>
 <p align="center">
