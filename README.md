@@ -23,17 +23,17 @@
 
 <h2>Clients Principaux</h2>
 
-| Nom | Description |
+| Nom | Description | Stack Technique | Lien 
 | :--- | :--- |
-| **Detectivebox** | Jeu d'enquête immersive. |
-| **Jexplore** | Plateforme de formation sur l'artisanat sur le Web et Réalité virtuelle |
-| **Plai** | Solution de streaming de musique libre de droit pour professionnels TPE et PME. |
+| **Detectivebox** | Jeu d'enquête immersive. | Next, Vite, Tailwind, Postgres | ... |
+| **Jexplore** | Plateforme de formation sur l'artisanat sur le Web et Réalité virtuelle | Next, Vite, Tailwind, Postgres | ... |
+| **Plai** | Solution de streaming de musique libre de droit pour professionnels TPE et PME. | Next, Vite, Tailwind, Postgres | <a href="https://www.plai.fr/">Ouvrir</a> |
 
 ---
 
 <h2>🌟 Vitrine de Projets</h2>
 
-| Projet | Description | Stack Principal | Statut |
+| Projet | Description | Stack Technique | Lien |
 | :--- | :--- | :--- | :--- |
 | **BG Cleaner** | 🖼️ Outil Web pour la suppression et l'édition rapide d'arrière-plans d'images. | React, Tailwind CSS, Vercel | <a href="https://bgcleaner.vercel.app/">Ouvrir</a> |
 | **Astro** | 🖼️ Explorez les merveilles de notre système solaire. | Vite, Javascript, Tailwind CSS, Vercel | <a href="https://astro-three-flax.vercel.app/">Ouvrir</a> |
