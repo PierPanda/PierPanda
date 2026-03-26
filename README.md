@@ -21,7 +21,7 @@
 
 ---
 
-<h2> Clients Principaux</h2>
+<h2> <img src="  <img src="https://api.iconify.design/fluent/people-team-24-regular.svg?color=%230078d4&width=32&height=32" />"/> Clients Principaux</h2>
 
 | Projet | Description | Stack Technique | Lien | 
 | :--- | :--- | :--- | :--- |
