@@ -3,7 +3,7 @@
   ✌️ Hello !
 </h1>
 
-<h3 align="center">🔥 Développeur Front-end / Full-Stack, React & Node.js 🔥</h3>
+<h3 align="center">Développeur Front-end / Full-Stack, React & Node.js</h3>
 
 <p align="center">
   Mon objectif : Transformer les défis techniques complexes en solutions web <b>performantes</b>, <b>maintenables</b> et <b>intuitives</b>. Je construis la stack moderne : du serveur Node.js rapide à l'interface utilisateur React élégante.
@@ -11,7 +11,7 @@
 
 ---
 
-<h2>Ma Philosophie Technique</h2>
+<h2><img src="https://api.iconify.design/lucide/brain.svg" width="24" /> Ma Philosophie Technique</h2>
 
 | Domaine | Description |
 | :--- | :--- |
@@ -31,7 +31,7 @@
 
 ---
 
-<h2>Vitrine de Projets</h2>
+<h2><img src="https://api.iconify.design/fluent/people-team-24-regular.svg?color=%23ffffff" width="24" /> Vitrine de Projets</h2>
 
 | Projet | Description | Stack Technique | Lien |
 | :--- | :--- | :--- | :--- |
@@ -40,7 +40,7 @@
 | **Plai (vitrine)** | Plateforme de streaming libre de droit. | React, Tailwind CSS, Vercel | <a href="https://www.plai.fr/">Ouvrir</a> |
 <br>
 
-<h2 align="center">🛠️ Stack & Outils Maîtrisés</h2>
+<h2 align="center"><img src="https://api.iconify.design/fluent/people-team-24-regular.svg?color=%23ffffff" width="24" /> Stack & Outils Maîtrisés</h2>
 
 <p align="center">
   <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" roounded=full/>
@@ -64,7 +64,7 @@
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
 </p>
 
-<h2 align="center">💬 Parlons Code !</h2>
+<h2 align="center"><img src="https://api.iconify.design/fluent/people-team-24-regular.svg?color=%23ffffff" width="24" /> Parlons Code !</h2>
 
 <p align="center">
   Que vous ayez un projet à discuter, une opportunité d'emploi ou une question sur une technologie, je suis toujours ouvert à l'échange.
