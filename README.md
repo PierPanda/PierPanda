@@ -1,3 +1,5 @@
+import 'iconify-icon';
+
 <h1 align="center">
   <br>
   👋 Hello !
@@ -21,7 +23,9 @@
 
 ---
 
-<h2>Clients Principaux</h2>
+<iconify-icon icon="eva:people-outline"></iconify-icon>
+
+<h2> Clients Principaux</h2>
 
 | Projet | Description | Stack Technique | Lien | 
 | :--- | :--- | :--- | :--- |
