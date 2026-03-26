@@ -54,17 +54,6 @@
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
 </p>
 
----
-
-<h2 align="center">📊 Mon Activité GitHub</h2>
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=PierPanda&show_icons=true&theme=vue&hide_border=true&rank_icon=github" alt="Statistiques GitHub de PierPanda" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=PierPanda&layout=compact&theme=vue&hide_border=true" alt="Langages les plus utilisés" />
-</p>
-
----
-
 <h2 align="center">💬 Parlons Code !</h2>
 
 <p align="center">
