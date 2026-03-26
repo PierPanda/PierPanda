@@ -22,6 +22,7 @@
 ---
 
 <h2><img src="https://api.iconify.design/fluent/people-team-24-regular.svg?color=%23ffffff" width="24" /> Clients Principaux</h2>
+
 | Projet | Description | Stack Technique | Lien | 
 | :--- | :--- | :--- | :--- |
 | **Detectivebox** | Jeu d'enquête immersive. | Next, Vite, React XState, Tailwind, Postgres | ... |
