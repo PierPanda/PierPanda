@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  👋 Hello !
+  ✌️ Hello !
 </h1>
 
 <h3 align="center">🔥 Développeur Front-end / Full-Stack, React & Node.js 🔥</h3>
@@ -11,7 +11,7 @@
 
 ---
 
-<h2>💡 Ma Philosophie Technique</h2>
+<h2>Ma Philosophie Technique</h2>
 
 | Domaine | Description |
 | :--- | :--- |
@@ -21,7 +21,7 @@
 
 ---
 
-<h2> <img src="https://api.iconify.design/fluent/people-team-24-regular.svg" width="24" /> Clients Principaux</h2>
+<h2><img src="https://api.iconify.design/fluent/people-team-24-regular.svg" width="24" /> Clients Principaux</h2>
 
 | Projet | Description | Stack Technique | Lien | 
 | :--- | :--- | :--- | :--- |
@@ -31,7 +31,7 @@
 
 ---
 
-<h2>🌟 Vitrine de Projets</h2>
+<h2>Vitrine de Projets</h2>
 
 | Projet | Description | Stack Technique | Lien |
 | :--- | :--- | :--- | :--- |
