@@ -65,7 +65,6 @@
 </p>
 
 <h2 align="center"><img src="https://api.iconify.design/streamline-logos/kakao-talk-logo.svg?color=%23ffffff" width="24" /> Parlons Code !</h2>
-
 <p align="center">
   Que vous ayez un projet à discuter, une opportunité d'emploi ou une question sur une technologie, je suis toujours ouvert à l'échange.
 </p>
