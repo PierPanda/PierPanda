@@ -21,7 +21,7 @@
 
 ---
 
-<h2>🌟 Vitrine de Projets (Showcase)</h2>
+<h2>🌟 Vitrine de Projets</h2>
 
 | Projet | Description | Stack Principal | Statut |
 | :--- | :--- | :--- | :--- |
