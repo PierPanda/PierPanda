@@ -26,7 +26,7 @@
 | Projet | Description | Stack Technique | Lien | 
 | :--- | :--- | :--- | :--- |
 | **Detectivebox** | Jeu d'enquête immersive. | Next, Vite, React XState, Tailwind, Postgres | ... |
-| **Jexplore** | Plateforme de formation sur l'artisanat sur le Web et Réalité virtuelle | Next, Tailwind, Postgres, Tanstack Query, GraphQL | ... |
+| **Jexplore** | Plateforme de formation sur l'artisanat sur le Web et Réalité virtuelle | Next, Tailwind, Postgres, Tanstack Query, GraphQL, Zustand | ... |
 | **Plai** | Solution de streaming de musique libre de droit pour professionnels TPE et PME. | React Router, Vite, Tailwind, Postgres | <a href="https://www.plai.fr/">Ouvrir</a> |
 
 ---
