@@ -11,7 +11,7 @@
 
 ---
 
-<h2><img src="https://api.iconify.design/lucide/brain.svg" width="24" /> Ma Philosophie Technique</h2>
+<h2><img src="https://api.iconify.design/lucide/brain.svg?color=%23ffffff" width="24" /> Ma Philosophie Technique</h2>
 
 | Domaine | Description |
 | :--- | :--- |
