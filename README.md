@@ -1,5 +1,3 @@
-import 'iconify-icon';
-
 <h1 align="center">
   <br>
   👋 Hello !
@@ -22,8 +20,6 @@ import 'iconify-icon';
 | **Design & UX** | L'esthétique et l'ergonomie (Tailwind CSS) sont au cœur de mes créations. |
 
 ---
-
-<iconify-icon icon="eva:people-outline"></iconify-icon>
 
 <h2> Clients Principaux</h2>
 
