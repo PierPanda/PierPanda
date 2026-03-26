@@ -21,6 +21,16 @@
 
 ---
 
+<h2>Clients Principaux</h2>
+
+| Nom | Description |
+| :--- | :--- |
+| **Detectivebox** | Jeu d'enquête immersive. |
+| **Jexplore** | Plateforme de formation sur l'artisanat sur le Web et Réalité virtuelle |
+| **Plai** | Solution de streaming de musique libre de droit pour professionnels TPE et PME. |
+
+---
+
 <h2>🌟 Vitrine de Projets</h2>
 
 | Projet | Description | Stack Principal | Statut |
