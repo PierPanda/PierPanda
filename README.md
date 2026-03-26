@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  👋 Hello ! Je suis Pierre
+  👋 Hello !
 </h1>
 
 <h3 align="center">🔥 Développeur Front-end / Full-Stack, React & Node.js 🔥</h3>
