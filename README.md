@@ -1,9 +1,8 @@
 <h1 align="center">
   <br>
 <p align="center">
-  ✌️
   <a href="https://github.com/PierPanda">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&pause=1000&color=6C63FF&center=true&vCenter=true&width=620&lines=Salut+%2C+je+suis+Pierre+!;D%C3%A9veloppeur+Front-End+%2F+Full-Stack;React+%7C+Node.js+%7C+TypeScript;Je+construis+des+interfaces+qui+ont+du+sens." alt="Typing SVG" />
+   ✌️ <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&pause=1000&color=6C63FF&center=true&vCenter=true&width=620&lines=Salut+%2C+je+suis+Pierre+!;D%C3%A9veloppeur+Front-End+%2F+Full-Stack;React+%7C+Node.js+%7C+TypeScript;Je+construis+des+interfaces+qui+ont+du+sens." alt="Typing SVG" />
   </a>
 </p>
 </h1>
