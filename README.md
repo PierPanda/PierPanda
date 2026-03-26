@@ -31,7 +31,7 @@
 
 ---
 
-<h2><img src="https://api.iconify.design/bx/show-alt.svg?color=%23ffffff" width="24" /> Vitrine de Projets</h2>
+<h2><img src="https://api.iconify.design/streamline-freehand/worldwide-web-network-www.svg?color=%23ffffff" width="24" /> Vitrine de Projets</h2>
 
 | Projet | Description | Stack Technique | Lien |
 | :--- | :--- | :--- | :--- |
