@@ -1,122 +1,87 @@
+<h1 align="center">
+  <br>
 <p align="center">
   <a href="https://github.com/PierPanda">
     <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&pause=1000&color=6C63FF&center=true&vCenter=true&width=620&lines=Salut+%2C+je+suis+Pierre+!;D%C3%A9veloppeur+Front-End+%2F+Full-Stack;React+%7C+Node.js+%7C+TypeScript;Je+construis+des+interfaces+qui+ont+du+sens." alt="Typing SVG" />
   </a>
 </p>
+</h1>
+
+<h3 align="center">Développeur Front-end / Full-Stack, React & Node.js</h3>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=PierPanda&style=flat-square&color=6C63FF&label=Visiteurs" />
+  Mon objectif : Transformer les défis techniques complexes en solutions web <b>performantes</b>, <b>maintenables</b> et <b>intuitives</b>. Je construis la stack moderne : du serveur Node.js rapide à l'interface utilisateur React élégante.
 </p>
 
 ---
 
-<h2>
-  <img src="https://api.iconify.design/solar/user-bold-duotone.svg?color=%236C63FF" width="22" />
-  À propos de moi
-</h2>
+<h2><img src="https://api.iconify.design/hugeicons/brain-02.svg?color=%23ffffff" width="24" /> Ma Philosophie Technique</h2>
 
-- Je suis développeur **Front-End / Full-Stack**, spécialisé **React & Node.js**
-- Attiré par l'**expérience utilisateur** — je considère l'UI/UX comme un enjeu technique, pas une couche de peinture
-- Je construis en **TypeScript strict** pour la robustesse à long terme
-- J'optimise pour la **performance** : SSR, code splitting, Core Web Vitals
-- Ouvert à des projets ambitieux et à des équipes qui font les choses bien
+| Domaine | Description |
+| :--- | :--- |
+| **Performance** | Je priorise l'optimisation (SSR, code splitting) pour une expérience utilisateur instantanée. |
+| **Robustesse** | J'utilise TypeScript pour garantir la sécurité et la stabilité du code à grande échelle. |
+| **Design & UX** | L'esthétique et l'ergonomie (Tailwind CSS) sont au cœur de mes créations. |
 
+---
+
+<h2><img src="https://api.iconify.design/fluent/people-team-24-regular.svg?color=%23ffffff" width="24" /> Clients Principaux</h2>
+
+| Projet | Description | Stack Technique | Lien | 
+| :--- | :--- | :--- | :--- |
+| **Detectivebox** | Jeu d'enquête immersive. | Next, Vite, React XState, Tailwind, Postgres | ... |
+| **Jexplore** | Plateforme de formation sur l'artisanat sur le Web et Réalité virtuelle | Next, Tailwind, Postgres, Tanstack Query, GraphQL, Zustand | ... |
+| **Plai** | Solution de streaming de musique libre de droit pour professionnels TPE et PME. | React Router, Vite, Tailwind, Postgres | <a href="https://www.plai.fr/">Ouvrir</a> |
+
+---
+
+<h2><img src="https://api.iconify.design/streamline-freehand/worldwide-web-network-www.svg?color=%23ffffff" width="24" /> Vitrine de Projets</h2>
+
+| Projet | Description | Stack Technique | Lien |
+| :--- | :--- | :--- | :--- |
+| **BG Cleaner** | Outil Web pour la suppression et l'édition rapide d'arrière-plans d'images. | React, Tailwind CSS, Vercel | <a href="https://bgcleaner.vercel.app/">Ouvrir</a> |
+| **Astro** | Explorez les merveilles de notre système solaire. | Vite, Javascript, Tailwind CSS, Vercel | <a href="https://astro-three-flax.vercel.app/">Ouvrir</a> |
+| **Plai (vitrine)** | Plateforme de streaming libre de droit. | React, Tailwind CSS, Vercel | <a href="https://www.plai.fr/">Ouvrir</a> |
 <br>
 
-📫 **bermudezpierre@gmail.com** &nbsp;·&nbsp; [LinkedIn](https://www.linkedin.com/in/pierre-bermudez-b6247891/)
-
 ---
 
-<h2>
-  <img src="https://api.iconify.design/solar/buildings-bold-duotone.svg?color=%236C63FF" width="22" />
-  Clients
-</h2>
-
-| Projet | Description | Stack |
-| :--- | :--- | :--- |
-| **Detectivebox** | Jeu d'enquête immersive en ligne | Next.js · XState · Tailwind · Postgres |
-| **Jexplore** | Formation artisanat — Web & Réalité Virtuelle | Next.js · GraphQL · TanStack · Zustand |
-| **Plai** | Streaming musical libre de droit B2B | React Router · Vite · Tailwind · Postgres |
-
----
-
-<h2>
-  <img src="https://api.iconify.design/solar/code-bold-duotone.svg?color=%236C63FF" width="22" />
-  Projets open-source
-</h2>
-
-| Projet | Description | Stack | Lien |
-| :--- | :--- | :--- | :--- |
-| **BG Cleaner** | Suppression & édition d'arrière-plans d'images | React · Tailwind · Vercel | [→ Ouvrir](https://bgcleaner.vercel.app/) |
-| **Astro** | Exploration interactive du système solaire | Vite · JS · Tailwind · Vercel | [→ Ouvrir](https://astro-three-flax.vercel.app/) |
-
----
-
-<h2>
-  <img src="https://api.iconify.design/solar/settings-bold-duotone.svg?color=%236C63FF" width="22" />
-  Stack & Outils
-</h2>
+<h3 align="center"><img src="https://api.iconify.design/nimbus/tools.svg?color=%23ffffff" width="24" /> Stack & Outils Maîtrisés</h3>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
-  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
-  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" />
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" roounded=full/>
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
-  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" />
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
-  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
-  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
+  <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express" />
+  <img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white" alt="Sass" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
+  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" />
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
 </p>
 
 ---
 
-<h2>
-  <img src="https://api.iconify.design/solar/chart-bold-duotone.svg?color=%236C63FF" width="22" />
-  Stats GitHub
-</h2>
-
+<h3 align="center"><img src="https://api.iconify.design/streamline-logos/kakao-talk-logo.svg?color=%23ffffff" width="24" /> Parlons Code !</h3>
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=PierPanda&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true" height="165" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=PierPanda&layout=compact&theme=tokyonight&hide_border=true&langs_count=6" height="165" />
-</p>
-
-<p align="center">
-  <img src="https://streak-stats.demolab.com?user=PierPanda&theme=tokyonight&hide_border=true" />
-</p>
-
----
-
-<h2>
-  <img src="https://api.iconify.design/solar/graph-up-bold-duotone.svg?color=%236C63FF" width="22" />
-  Activité
-</h2>
-
-<p align="center">
-  <img src="https://github.com/PierPanda/PierPanda/blob/output/github-snake-dark.svg" />
-</p>
-
----
-
-<h2 align="center">
-  <img src="https://api.iconify.design/solar/chat-round-bold-duotone.svg?color=%236C63FF" width="22" />
-  Parlons-en
-</h2>
-
-<p align="center">
-  Un projet, une opportunité ou juste une question — je suis toujours partant pour un échange.
+  Que vous ayez un projet à discuter, une opportunité d'emploi ou une question sur une technologie, je suis toujours ouvert à l'échange.
 </p>
 
 <p align="center">
   <a href="mailto:bermudezpierre@gmail.com">
-    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Contactez-moi par Email" />
   </a>
-  &nbsp;
   <a href="https://www.linkedin.com/in/pierre-bermudez-b6247891/">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="Mon profil LinkedIn" />
   </a>
 </p>
