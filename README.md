@@ -15,16 +15,16 @@
 
 | Domaine | Description |
 | :--- | :--- |
-| 🚀 **Performance** | Je priorise l'optimisation (SSR, code splitting) pour une expérience utilisateur instantanée. |
-| 🛡️ **Robustesse** | J'utilise TypeScript pour garantir la sécurité et la stabilité du code à grande échelle. |
-| 🎨 **Design & UX** | L'esthétique et l'ergonomie (Tailwind CSS) sont au cœur de mes créations. |
+| **Performance** | Je priorise l'optimisation (SSR, code splitting) pour une expérience utilisateur instantanée. |
+| **Robustesse** | J'utilise TypeScript pour garantir la sécurité et la stabilité du code à grande échelle. |
+| **Design & UX** | L'esthétique et l'ergonomie (Tailwind CSS) sont au cœur de mes créations. |
 
 ---
 
 <h2>Clients Principaux</h2>
 
-| Nom | Description | Stack Technique | Lien 
-| :--- | :--- |
+| Projet | Description | Stack Technique | Lien | 
+| :--- | :--- | :--- | :--- |
 | **Detectivebox** | Jeu d'enquête immersive. | Next, Vite, Tailwind, Postgres | ... |
 | **Jexplore** | Plateforme de formation sur l'artisanat sur le Web et Réalité virtuelle | Next, Vite, Tailwind, Postgres | ... |
 | **Plai** | Solution de streaming de musique libre de droit pour professionnels TPE et PME. | Next, Vite, Tailwind, Postgres | <a href="https://www.plai.fr/">Ouvrir</a> |
@@ -35,9 +35,9 @@
 
 | Projet | Description | Stack Technique | Lien |
 | :--- | :--- | :--- | :--- |
-| **BG Cleaner** | 🖼️ Outil Web pour la suppression et l'édition rapide d'arrière-plans d'images. | React, Tailwind CSS, Vercel | <a href="https://bgcleaner.vercel.app/">Ouvrir</a> |
-| **Astro** | 🖼️ Explorez les merveilles de notre système solaire. | Vite, Javascript, Tailwind CSS, Vercel | <a href="https://astro-three-flax.vercel.app/">Ouvrir</a> |
-| **Plai (vitrine)** | 🖼️ Plateforme de streaming libre de droit. | React, Tailwind CSS, Vercel | <a href="https://www.plai.fr/">Ouvrir</a> |
+| **BG Cleaner** | Outil Web pour la suppression et l'édition rapide d'arrière-plans d'images. | React, Tailwind CSS, Vercel | <a href="https://bgcleaner.vercel.app/">Ouvrir</a> |
+| **Astro** | Explorez les merveilles de notre système solaire. | Vite, Javascript, Tailwind CSS, Vercel | <a href="https://astro-three-flax.vercel.app/">Ouvrir</a> |
+| **Plai (vitrine)** | Plateforme de streaming libre de droit. | React, Tailwind CSS, Vercel | <a href="https://www.plai.fr/">Ouvrir</a> |
 <br>
 
 <h2 align="center">🛠️ Stack & Outils Maîtrisés</h2>
