@@ -11,21 +11,21 @@
 <table>
   <tr>
     <td>
-      <img src="https://api.dicebear.com/9.x/bottts/svg?seed=PierPanda" width="150"/>
+      <img src="https://api.dicebear.com/9.x/bottts/svg?seed=PierPanda" width="180"/>
     </td>
     <td>
       <pre>
-pierre@github
-─────────────────────────────────────────
-Place  : France 🇫🇷
-Role   : Front-End / Full-Stack Developer
-Stack  : React · Next.js/React-Router · Node.js · TypeScript
-Focus  : Interfaces performantes · Orienté UX
-Status : Ouvert aux opportunités et projets
+        pierre@github
+        ─────────────────────────────────────────
+        Place  : France 🇫🇷
+        Role   : Front-End / Full-Stack Developer
+        Stack  : React · Next.js/React-Router · Node.js · TypeScript
+        Focus  : Interfaces performantes · Orienté UX
+        Status : Ouvert aux opportunités et projets
       </pre>
     </td>
     <td>
-      <img src="https://api.dicebear.com/9.x/bottts/svg?seed=PierPanda" width="150"/>
+      <img src="https://api.dicebear.com/9.x/bottts/svg?seed=PierPanda" width="180"/>
     </td>
   </tr>
 </table>
