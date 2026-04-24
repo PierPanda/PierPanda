@@ -11,7 +11,7 @@
 <table>
   <tr>
     <td>
-      <img src="https://api.dicebear.com/9.x/bottts/svg?seed=PierPanda" width="120"/>
+      <img src="https://api.dicebear.com/9.x/bottts/svg?seed=PierPanda" width="150"/>
     </td>
     <td>
       <pre>
@@ -25,7 +25,7 @@ Status : Ouvert aux opportunités et projets
       </pre>
     </td>
     <td>
-      <img src="https://api.dicebear.com/9.x/bottts/svg?seed=PierPanda" width="120"/>
+      <img src="https://api.dicebear.com/9.x/bottts/svg?seed=PierPanda" width="150"/>
     </td>
   </tr>
 </table>
