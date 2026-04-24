@@ -8,21 +8,24 @@
 
 <br/>
 
-<div>
-  <div>
-      <img src="https://github.com/PierPanda.png" width="130" style="border-radius:8px"/>
-    <div>
+<table>
+  <tr>
+    <td>
+      <img src="https://github.com/PierPanda.png" width="130"/>
+    </td>
+    <td>
       <pre>
 pierre@github
 ─────────────────────────────────────────
 Place  : France 🇫🇷
 Role   : Front-End / Full-Stack Developer
 Stack  : React · Next.js/React-Router · Node.js · TypeScript
-Focus  : Interfaces performantes · Orienté UX 
+Focus  : Interfaces performantes · Orienté UX
 Status : Ouvert aux opportunités et projets
       </pre>
-    </div>
-</div>
+    </td>
+  </tr>
+</table>
 
 <br/>
 
