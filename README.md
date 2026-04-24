@@ -36,16 +36,16 @@
 
 ## `~/ whoami`
 
-> Je ne construis pas juste des UI — je construis des **produits** dont les utilisateurs se souviennent.  
+> Mon rôle n'est pas simplement de construire des UI — mais de construire des **produits** dont les utilisateurs se souviennent.  
 > Passionné par la performance (SSR, code splitting), l'accessibilité, et le design de systèmes front-end à grande échelle.
 
 ```
-┌───────────────────────────────────────────────────────────┐
-│  ▸ Performance-first     → SSR, lazy loading, Lighthouse  │
-│  ▸ TypeScript by default → Moins de bugs, plus de paix    │
-│  ▸ Design & UX           → Tailwind, animations, detail   │
-│  ▸ Maintenabilité        → Architecture solide, tests     │
-└───────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│     ▸ Performance-first                   → SSR, lazy loading, Lighthouse                             
+│     ▸ TypeScript by default             → Moins de bugs, plus de paix       
+│     ▸ Design & UX                            → Tailwind, animations, detail      
+│     ▸ Maintenabilité                          → Architecture solide, tests       
+└─────────────────────────────────────────────────────────────────┘
 ```
 
 ---
@@ -87,7 +87,7 @@
 
 ## `~/ projects --personal`
 
-<table>
+<table>s
   <tbody>
     <tr>
       <td width="50%">
