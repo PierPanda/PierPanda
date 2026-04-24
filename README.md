@@ -25,7 +25,7 @@ Status : Ouvert aux opportunités et projets
       </pre>
     </td>
     <td>
-      <img src="[https://github.com/PierPanda.png](https://api.dicebear.com/9.x/bottts/svg?seed=PierPanda)" width="120"/>
+      <img src="https://api.dicebear.com/9.x/bottts/svg?seed=PierPanda" width="120"/>
     </td>
   </tr>
 </table>
