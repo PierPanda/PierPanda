@@ -11,7 +11,7 @@
 <table>
   <tr>
     <td>
-      <img src="https://github.com/PierPanda.png" width="130"/>
+      <img src="[https://github.com/PierPanda.png](https://api.dicebear.com/9.x/bottts/svg?seed=PierPanda)" width="120"/>
     </td>
     <td>
       <pre>
