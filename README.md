@@ -11,18 +11,19 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=180&section=header&text=Pierre%20Bermudez&fontSize=52&fontColor=ffffff&fontAlignY=38&desc=Front-End%20%2F%20Full-Stack%20Engineer&descSize=18&descAlignY=58&descColor=aaaaaa&animation=fadeIn" width="100%" />
 
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&pause=1000&color=6C63FF&center=true&vCenter=true&width=620&lines=Salut+%2C+je+suis+Pierre+!;D%C3%A9veloppeur+Front-End+%2F+Full-Stack;React+%7C+Node.js+%7C+TypeScript;Je+construis+des+interfaces+qui+ont+du+sens." alt="Typing SVG" />
 </div>
 
 <br/>
 
-```ts
-const pierre = {
-  role     : "Front-End / Full-Stack Developer",
-  location : "🇫🇷 France",
-  stack    : ["React", "Next.js", "Node.js", "TypeScript", "Tailwind CSS"],
-  focus    : "Interfaces performantes · Code robuste · UX qui a du sens",
-  currently: "Ouvert aux opportunités & collaborations",
-};
+```
+        ██████          pierre@github
+       ████████         ─────────────────────────────────────────
+      ██  ██  ██        OS     : France 🇫🇷
+      ██████████        Role   : Front-End / Full-Stack Developer
+      ██  ██  ██        Stack  : React · Next.js · Node.js · TypeScript
+       ████████         Focus  : Interfaces performantes · UX qui a du sens
+        ██████          Status : Ouvert aux opportunités ⚡
 ```
 
 <br/>
