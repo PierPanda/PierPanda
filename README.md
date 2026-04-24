@@ -8,12 +8,10 @@
 
 <br/>
 
-<table>
-  <tr>
-    <td>
+<div>
+  <div>
       <img src="https://github.com/PierPanda.png" width="130" style="border-radius:8px"/>
-    </td>
-    <td>
+    <div>
       <pre>
 pierre@github
 ─────────────────────────────────────────
@@ -23,9 +21,8 @@ Stack  : React · Next.js/React-Router · Node.js · TypeScript
 Focus  : Interfaces performantes · Orienté UX 
 Status : Ouvert aux opportunités et projets
       </pre>
-    </td>
-  </tr>
-</table>
+    </div>
+</div>
 
 <br/>
 
