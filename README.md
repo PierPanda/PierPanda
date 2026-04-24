@@ -88,7 +88,7 @@
   <tbody>
     <tr>
       <td width="50%">
-        <h3><a href="https://bgcleaner.vercel.app/">🖼 BG Cleaner</a></h3>
+        <h3><a href="https://bgcleaner.vercel.app/">BG Cleaner</a></h3>
         <p>Suppression & édition d'arrière-plans d'images en un clic.</p>
         <p>
           <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB"/>
@@ -97,13 +97,13 @@
         </p>
       </td>
       <td width="50%">
-        <h3><a href="https://astro-three-flax.vercel.app/">🪐 Astro</a></h3>
+        <h3><a href="https://astro-three-flax.vercel.app/">Astro</a></h3>
         <p>Explorez les merveilles du système solaire. Projet visuel & interactif.</p>
         <p>
           <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white"/>
           <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"/>
           <img src="https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white"/>
-          <img src="[https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white](https://img.shields.io/badge/WebGL-990000?style=for-the-badge&logo=webgl&logoColor=white)"/>
+          <img src="https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white"/>
         </p>
       </td>
     </tr>
