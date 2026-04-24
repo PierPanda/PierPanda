@@ -11,7 +11,7 @@
 <table>
   <tr>
     <td>
-      <img src="https://api.dicebear.com/9.x/bottts/svg?seed=P" width="170"/>
+      <img src="https://api.dicebear.com/9.x/bottts/svg?seed=Pierre" width="170"/>
     </td>
     <td>
       <pre>
@@ -25,7 +25,7 @@
       </pre>
     </td>
     <td>
-      <img src="https://api.dicebear.com/9.x/bottts/svg?seed=C" width="170"/>
+      <img src="https://api.dicebear.com/9.x/bottts/svg?seed=Bermudez" width="170"/>
     </td>
   </tr>
 </table>
