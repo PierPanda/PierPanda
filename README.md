@@ -17,11 +17,11 @@
       <pre>
 pierre@github
 ─────────────────────────────────────────
-OS     : France 🇫🇷
+Place  : France 🇫🇷
 Role   : Front-End / Full-Stack Developer
-Stack  : React · Next.js · Node.js · TypeScript
-Focus  : Interfaces performantes · UX qui a du sens
-Status : Ouvert aux opportunités ⚡
+Stack  : React · Next.js/React-Router · Node.js · TypeScript
+Focus  : Interfaces performantes · Orienté UX 
+Status : Ouvert aux opportunités et projets
       </pre>
     </td>
   </tr>
