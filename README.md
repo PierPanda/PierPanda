@@ -8,15 +8,24 @@
 
 <br/>
 
-```
-        ██████          pierre@github
-       ████████         ─────────────────────────────────────────
-      ██  ██  ██        OS     : France 🇫🇷
-      ██████████        Role   : Front-End / Full-Stack Developer
-      ██  ██  ██        Stack  : React · Next.js · Node.js · TypeScript
-       ████████         Focus  : Interfaces performantes · UX qui a du sens
-        ██████          Status : Ouvert aux opportunités ⚡
-```
+<table>
+  <tr>
+    <td width="150px">
+      <img src="https://github.com/PierPanda.png" width="130" style="border-radius:8px"/>
+    </td>
+    <td>
+      <pre>
+pierre@github
+─────────────────────────────────────────
+OS     : France 🇫🇷
+Role   : Front-End / Full-Stack Developer
+Stack  : React · Next.js · Node.js · TypeScript
+Focus  : Interfaces performantes · UX qui a du sens
+Status : Ouvert aux opportunités ⚡
+      </pre>
+    </td>
+  </tr>
+</table>
 
 <br/>
 
