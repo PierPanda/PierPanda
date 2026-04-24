@@ -47,7 +47,7 @@
 │        ▸  Performance-first      →  SSR, lazy loading, Lighthouse          │
 │        ▸  TypeScript by default  →  Moins de bugs, plus de paix            │
 │        ▸  Design & UX            →  Tailwind, animations, detail           │
-│        ▸  Maintenabilité         →  Architecture solide, tests              │
+│        ▸  Maintenabilité         →  Architecture solide, tests             │
 │                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 </pre>
