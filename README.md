@@ -84,7 +84,7 @@
       <td><b><a href="https://www.plai.fr/">🎵 Plai</a></b></td>
       <td>Streaming musique libre de droit</td>
       <td><code>React Router</code> <code>Vite</code> <code>Tailwind</code> <code>Postgres</code></td>
-      <td>🟢 Live</td>
+      <td>🟢 En ligne</td>
     </tr>
   </tbody>
 </table>
@@ -184,4 +184,4 @@ Je réponds vite et je code encore plus vite. ⚡
 
 </div>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=100&section=footer" width="100%" />
+<img src="./assets/footer.svg" width="100%"/>
