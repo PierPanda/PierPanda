@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=180&section=header&text=Pierre%20Bermudez&fontSize=52&fontColor=ffffff&fontAlignY=38&descSize=18&descAlignY=58&descColor=aaaaaa&animation=fadeIn" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=timeAuto&customColorList=0,2,2,5,30&height=180&section=header&text=Pierre%20Bermudez&fontSize=52&fontColor=ffffff&fontAlignY=38&descSize=18&descAlignY=58&descColor=eeeeee&animation=fadeIn" width="100%" />
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&pause=1000&color=255,255,255&center=true&vCenter=true&width=620&lines=D%C3%A9veloppeur+Front-End+%2F+Full-Stack;React+%7C+Node.js+%7C+TypeScript;Je+construis+des+interfaces+qui+ont+du+sens." alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&pause=1000&color=F5C518&center=true&vCenter=true&width=620&lines=D%C3%A9veloppeur+Front-End+%2F+Full-Stack;React+%7C+Node.js+%7C+TypeScript;Je+construis+des+interfaces+qui+ont+du+sens." alt="Typing SVG" />
 
 </div>
 
