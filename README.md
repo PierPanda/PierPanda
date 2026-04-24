@@ -1,12 +1,3 @@
-
-██████╗ ██╗███████╗██████╗ ██████╗ ███████╗
-██╔══██╗██║██╔════╝██╔══██╗██╔══██╗██╔════╝
-██████╔╝██║█████╗  ██████╔╝██████╔╝█████╗
-██╔═══╝ ██║██╔══╝  ██╔══██╗██╔══██╗██╔══╝
-██║     ██║███████╗██║  ██║██║  ██║███████╗
-╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
-
-
 <div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=180&section=header&text=Pierre%20Bermudez&fontSize=52&fontColor=ffffff&fontAlignY=38&descSize=18&descAlignY=58&descColor=aaaaaa&animation=fadeIn" width="100%" />
