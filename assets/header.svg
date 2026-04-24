@@ -7,16 +7,13 @@
     </linearGradient>
   </defs>
 
-  <!-- Background -->
-  <rect width="900" height="180" fill="url(#grad)"/>
-
-  <!-- Wave bottom -->
-  <path d="M0,120 C150,160 300,80 450,120 C600,160 750,80 900,120 L900,180 L0,180 Z" fill="rgba(0,0,0,0.15)"/>
-  <path d="M0,140 C120,110 280,165 450,140 C620,115 780,165 900,140 L900,180 L0,180 Z" fill="rgba(0,0,0,0.25)"/>
+  <!-- Wave shape only -->
+  <path d="M0,0 L900,0 L900,120 C750,80 600,160 450,120 C300,80 150,160 0,120 Z" fill="url(#grad)"/>
+  <path d="M0,0 L900,0 L900,140 C780,165 620,115 450,140 C280,165 120,110 0,140 Z" fill="url(#grad)" opacity="0.5"/>
 
   <!-- Name -->
-  <text x="450" y="82" font-family="'Segoe UI', Arial, sans-serif" font-size="48" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="2">Pierre Bermudez</text>
+  <text x="450" y="72" font-family="'Segoe UI', Arial, sans-serif" font-size="48" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="2">Pierre Bermudez</text>
 
   <!-- Subtitle -->
-  <text x="450" y="116" font-family="'Segoe UI', Arial, sans-serif" font-size="17" font-weight="400" fill="rgba(255,255,255,0.85)" text-anchor="middle" letter-spacing="1">Front-End / Full-Stack Engineer</text>
+  <text x="450" y="106" font-family="'Segoe UI', Arial, sans-serif" font-size="17" font-weight="400" fill="rgba(255,255,255,0.9)" text-anchor="middle" letter-spacing="1">Front-End / Full-Stack Engineer</text>
 </svg>
