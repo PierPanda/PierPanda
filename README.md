@@ -10,7 +10,7 @@
 
 <table>
   <tr>
-    <td width="150px">
+    <td>
       <img src="https://github.com/PierPanda.png" width="130" style="border-radius:8px"/>
     </td>
     <td>
