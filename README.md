@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/header.svg" width="100%"/>"/>
+<img src="./assets/header.svg" width="100%"/>
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&pause=1000&color=F5C518&center=true&vCenter=true&width=620&lines=D%C3%A9veloppeur+Front-End+%2F+Full-Stack;React+%7C+Node.js+%7C+TypeScript;Je+construis+des+interfaces+qui+ont+du+sens." alt="Typing SVG" />
 
