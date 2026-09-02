@@ -77,19 +77,19 @@
       <td>En cours</td>
     </tr>
     <tr>
-      <td><b>🐦‍⬛ Le Corbeau</b> <sub>(Detectivebox — Mobile)</sub></td>
+      <td><b>Le Corbeau</b> <sub>(Detectivebox — Mobile)</sub></td>
       <td>Mini-jeu mobile pour salons & événements</td>
       <td><code>Expo</code> <code>React Native</code></td>
       <td>En ligne</td>
     </tr>
     <tr>
-      <td><b>🛠 Jexplore</b></td>
+      <td><b>Jexplore</b></td>
       <td>Formation artisanat — Web & VR</td>
       <td><code>Next.js</code> <code>GraphQL</code> <code>Zustand</code> <code>TanStack Query</code></td>
       <td>En cours</td>
     </tr>
     <tr>
-      <td><b><a href="https://www.plai.fr/">🎵 Plai</a></b></td>
+      <td><b><a href="https://www.plai.fr/">Plai</a></b></td>
       <td>Streaming musique libre de droit</td>
       <td><code>React Router</code> <code>Vite</code> <code>Tailwind</code> <code>Postgres</code></td>
       <td>En ligne</td>
