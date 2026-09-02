@@ -17,7 +17,7 @@
       <pre>
         pierre@github
         ─────────────────────────────────────────
-        Place  : France 🇫🇷
+        Place  : France
         Role   : Front-End / Full-Stack Developer
         Stack  : React · Next.js/React-Router · Node.js · TypeScript
         Focus  : Interfaces performantes · Orienté UX
@@ -48,6 +48,8 @@
 │        ▸  TypeScript by default  →  Moins de bugs, plus de paix            │
 │        ▸  Design & UX            →  Tailwind, animations, detail           │
 │        ▸  Maintenabilité         →  Architecture solide, tests             │
+│        ▸  Monorepo (Nx)          →  Scalabilité multi-projets, hérité de   │
+│                                      Sakuga Software                       │
 │                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 </pre>
@@ -69,22 +71,34 @@
   </thead>
   <tbody>
     <tr>
-      <td><b>🔍 Detectivebox</b></td>
+      <td><b>Detectivebox</b></td>
       <td>Jeu d'enquête immersive</td>
       <td><code>Next.js</code> <code>XState</code> <code>Tailwind</code> <code>Postgres</code></td>
-      <td>🟡 En cours</td>
+      <td>En cours</td>
+    </tr>
+    <tr>
+      <td><b>🐦‍⬛ Le Corbeau</b> <sub>(Detectivebox — Mobile)</sub></td>
+      <td>Mini-jeu mobile pour salons & événements</td>
+      <td><code>Expo</code> <code>React Native</code></td>
+      <td>En ligne</td>
     </tr>
     <tr>
       <td><b>🛠 Jexplore</b></td>
       <td>Formation artisanat — Web & VR</td>
       <td><code>Next.js</code> <code>GraphQL</code> <code>Zustand</code> <code>TanStack Query</code></td>
-      <td>🟡 En cours</td>
+      <td>En cours</td>
     </tr>
     <tr>
       <td><b><a href="https://www.plai.fr/">🎵 Plai</a></b></td>
       <td>Streaming musique libre de droit</td>
       <td><code>React Router</code> <code>Vite</code> <code>Tailwind</code> <code>Postgres</code></td>
-      <td>🟢 En ligne</td>
+      <td>En ligne</td>
+    </tr>
+    <tr>
+      <td><b>Royal Canin</b> <sub>(Mars Groupe)</sub></td>
+      <td>A/B Testing, personnalisation & Landing Page</td>
+      <td><code>AB Tasty</code> <code>GTM</code> <code>GA4</code></td>
+      <td>En cours</td>
     </tr>
   </tbody>
 </table>
@@ -93,7 +107,7 @@
 
 ## `~/ projects --personal`
 
-<table>s
+<table>
   <tbody>
     <tr>
       <td width="50%">
@@ -116,6 +130,17 @@
           <img src="https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white"/>        </p>
       </td>
     </tr>
+    <tr>
+      <td colspan="2">
+        <h3>JSA-BMB <sub>Terminée — pas encore sur l'App Store</sub></h3>
+        <p>Application mobile pour renforcer la proximité du club de basket de Bordeaux (JSA) avec ses supporters : billetterie, streaming, suivi des équipes (stats joueurs, matchs, résultats, classement) et nouveau tunnel d'acquisition publicitaire pour les sponsors du club. Les jours de match, elle renforce la proximité avec les supporters via des jeux et un vote MVP.</p>
+        <p>
+          <img src="https://img.shields.io/badge/Expo-000020?style=flat-square&logo=expo&logoColor=white"/>
+          <img src="https://img.shields.io/badge/React_Native-20232A?style=flat-square&logo=react&logoColor=61DAFB"/>
+          <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white"/>
+        </p>
+      </td>
+    </tr>
   </tbody>
 </table>
 
@@ -123,7 +148,7 @@
 
 ## `~/ stack --list`
 
-**Front-End**
+**Front-End/Full-Stack**
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white)
@@ -131,10 +156,15 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=threedotjs&logoColor=white)
+![React Three Fiber](https://img.shields.io/badge/React_Three_Fiber-000000?style=for-the-badge&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
 ![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
 
-**Back-End & Base de données**
+**Mobile**
+![Expo](https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=white)
+![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+
+**Back-End & Data**
 
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
@@ -149,6 +179,8 @@
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Nx](https://img.shields.io/badge/Nx-143055?style=for-the-badge&logo=nx&logoColor=white)
+![Dokploy](https://img.shields.io/badge/Dokploy-000000?style=for-the-badge&logoColor=white)
 
 ---
 
@@ -172,7 +204,7 @@
 <br/>
 
 **Un projet ? Une mission ? Une question ?**  
-Je réponds vite et je code encore plus vite. ⚡
+Je réponds vite et je code encore plus vite. 
 
 <br/>
 

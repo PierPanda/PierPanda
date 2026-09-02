@@ -1,0 +1,22 @@
+<svg width="900" height="180" viewBox="0 0 900 180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#F5C518"/>
+      <stop offset="50%"  stop-color="#F59418"/>
+      <stop offset="100%" stop-color="#E85D04"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="180" fill="url(#grad)"/>
+
+  <!-- Wave bottom -->
+  <path d="M0,120 C150,160 300,80 450,120 C600,160 750,80 900,120 L900,180 L0,180 Z" fill="rgba(0,0,0,0.15)"/>
+  <path d="M0,140 C120,110 280,165 450,140 C620,115 780,165 900,140 L900,180 L0,180 Z" fill="rgba(0,0,0,0.25)"/>
+
+  <!-- Name -->
+  <text x="450" y="82" font-family="'Segoe UI', Arial, sans-serif" font-size="48" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="2">Pierre Bermudez</text>
+
+  <!-- Subtitle -->
+  <text x="450" y="116" font-family="'Segoe UI', Arial, sans-serif" font-size="17" font-weight="400" fill="rgba(255,255,255,0.85)" text-anchor="middle" letter-spacing="1">Front-End / Full-Stack Engineer</text>
+</svg>
