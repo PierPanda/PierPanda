@@ -210,8 +210,7 @@
 
 <br/>
 
-**Un projet ? Une mission ? Une question ?**  
-Je réponds vite et je code encore plus vite. 
+**Un projet ? Une mission ? Une question ? Un café ?**   
 
 <br/>
 
