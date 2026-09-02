@@ -194,12 +194,12 @@
 ## `~/ stats`
 
 <div align="center">
-  <img height="160" src="https://github-readme-stats.vercel.app/api?username=PierPanda&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=F5C518&icon_color=E85D04&text_color=c9d1d9&rank_icon=github" />
-  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=PierPanda&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=F5C518&text_color=c9d1d9&langs_count=6" />
+  <img height="160" src="https://github-readme-stats-bice-rho-19.vercel.app/api?username=PierPanda&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=F5C518&icon_color=E85D04&text_color=c9d1d9&rank_icon=github" />
+  <img height="160" src="https://github-readme-stats-bice-rho-19.vercel.app/api/top-langs/?username=PierPanda&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=F5C518&text_color=c9d1d9&langs_count=6" />
 </div>
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=PierPanda&bg_color=0d1117&color=F5C518&line=E85D04&point=ffffff&hide_border=true" width="95%" />
+  <img src="https://github-readme-activity-graph-dusky-two.vercel.app/graph?username=PierPanda&bg_color=0d1117&color=F5C518&line=E85D04&point=ffffff&hide_border=true" width="95%" />
 </div>
 
 ---
