@@ -95,7 +95,7 @@
       <td>En ligne</td>
     </tr>
     <tr>
-      <td><img src="./assets/logos/royal-canin.png" height="20" valign="middle"/> <b>Royal Canin</b> <sub>(Mars Groupe)</sub></td>
+      <td><img src="./assets/logos/rc.png" height="20" valign="middle"/> <b>Royal Canin</b> <sub>(Mars Groupe)</sub></td>
       <td>A/B Testing, personnalisation & Landing Page</td>
       <td><code>AB Tasty</code> <code>GTM</code> <code>GA4</code></td>
       <td>En cours</td>
