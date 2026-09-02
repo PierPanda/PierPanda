@@ -21,7 +21,7 @@
         Role   : Front-End / Full-Stack Developer
         Stack  : React · Next.js/React-Router · Node.js · TypeScript
         Focus  : Interfaces performantes · Orienté UX
-        Status : Ouvert aux opportunités et projets
+        ----- Ouvert aux opportunités et projets  -----
       </pre>
     </td>
     <td>
@@ -99,6 +99,12 @@
       <td>A/B Testing, personnalisation & Landing Page</td>
       <td><code>AB Tasty</code> <code>GTM</code> <code>GA4</code></td>
       <td>En cours</td>
+    </tr>
+    <tr>
+      <td><b>JSA-BMB</b> <sub>(Club de basket JSA Bordeaux)</sub></td>
+      <td>Billetterie, streaming & suivi des équipes</td>
+      <td><code>Expo</code> <code>React Native</code> <code>TypeScript</code></td>
+      <td>En attente de publication</td>
     </tr>
   </tbody>
 </table>
