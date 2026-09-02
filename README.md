@@ -34,7 +34,7 @@
 
 ---
 
-## `~/ whoami`
+## `Whoami`
 
 > Mon rôle n'est pas simplement de construire des UI — mais de construire des **produits** dont les utilisateurs se souviennent.  
 > Passionné par la performance (SSR, code splitting), l'accessibilité, et le design de systèmes front-end à grande échelle.
@@ -58,7 +58,7 @@
 
 ---
 
-## `~/ clients --featured`
+## `Clients --featured`
 
 <table>
   <thead>
@@ -111,7 +111,7 @@
 
 ---
 
-## `~/ projects --personal`
+## `Projects --perso`
 
 <table>
   <tbody>
@@ -152,7 +152,7 @@
 
 ---
 
-## `~/ stack --list`
+## `Stack --list`
 
 **Front-End/Full-Stack**
 
@@ -191,7 +191,7 @@
 
 ---
 
-## `~/ stats`
+## `Stats`
 
 <div align="center">
   <img height="160" src="https://github-readme-stats-bice-rho-19.vercel.app/api?username=PierPanda&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=F5C518&icon_color=E85D04&text_color=c9d1d9&rank_icon=github" />
@@ -204,7 +204,7 @@
 
 ---
 
-## `~/ contact`
+## `Contact`
 
 <div align="center">
 
