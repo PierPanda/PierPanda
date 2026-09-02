@@ -71,37 +71,37 @@
   </thead>
   <tbody>
     <tr>
-      <td><b>Detectivebox</b></td>
+      <td><img src="./assets/logos/detectivebox.png" height="20" valign="middle"/> <b>Detectivebox</b></td>
       <td>Jeu d'enquête immersive</td>
       <td><code>Next.js</code> <code>XState</code> <code>Tailwind</code> <code>Postgres</code></td>
       <td>En cours</td>
     </tr>
     <tr>
-      <td><b>Le Corbeau</b> <sub>(Detectivebox — Mobile)</sub></td>
+      <td><img src="./assets/logos/detectivebox.png" height="20" valign="middle"/> <b>Le Corbeau</b> <sub>(Detectivebox — Mobile)</sub></td>
       <td>Mini-jeu mobile pour salons & événements</td>
       <td><code>Expo</code> <code>React Native</code></td>
       <td>En ligne</td>
     </tr>
     <tr>
-      <td><b>Jexplore</b></td>
+      <td><img src="./assets/logos/jexplore.png" height="20" valign="middle"/> <b>Jexplore</b></td>
       <td>Formation artisanat — Web & VR</td>
       <td><code>Next.js</code> <code>GraphQL</code> <code>Zustand</code> <code>TanStack Query</code></td>
       <td>En cours</td>
     </tr>
     <tr>
-      <td><b><a href="https://www.plai.fr/">Plai</a></b></td>
+      <td><img src="./assets/logos/plai.svg" height="20" valign="middle"/> <b><a href="https://www.plai.fr/">Plai</a></b></td>
       <td>Streaming musique libre de droit</td>
       <td><code>React Router</code> <code>Vite</code> <code>Tailwind</code> <code>Postgres</code></td>
       <td>En ligne</td>
     </tr>
     <tr>
-      <td><b>Royal Canin</b> <sub>(Mars Groupe)</sub></td>
+      <td><img src="./assets/logos/royal-canin.png" height="20" valign="middle"/> <b>Royal Canin</b> <sub>(Mars Groupe)</sub></td>
       <td>A/B Testing, personnalisation & Landing Page</td>
       <td><code>AB Tasty</code> <code>GTM</code> <code>GA4</code></td>
       <td>En cours</td>
     </tr>
     <tr>
-      <td><b>JSA-BMB</b> <sub>(Club de basket JSA Bordeaux)</sub></td>
+      <td><img src="./assets/logos/jsa-bmb.png" height="20" valign="middle"/> <b>JSA-BMB</b> <sub>(Club de basket JSA Bordeaux)</sub></td>
       <td>Billetterie, streaming & suivi des équipes</td>
       <td><code>Expo</code> <code>React Native</code> <code>TypeScript</code></td>
       <td>En attente de publication</td>
