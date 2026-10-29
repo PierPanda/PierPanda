@@ -14,6 +14,16 @@
   @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }</style>
 <defs><linearGradient id="brand-v" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F5C518"/><stop offset="1" stop-color="#E85D04"/></linearGradient></defs>
   <rect x=".5" y=".5" width="999" height="109" rx="12" fill="#161B22" stroke="#30363D"/>
+  <style>
+    .border-glint { animation: border-glint 7.56s linear infinite; }
+    @keyframes border-glint { to { stroke-dashoffset: -2193.1; } }
+  </style>
+  <defs><linearGradient id="border-glint-gradient" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#F5C518"/>
+  <stop offset=".5" stop-color="#F59418"/>
+  <stop offset="1" stop-color="#E85D04"/>
+</linearGradient></defs>
+  <rect class="border-glint" x="1" y="1" width="998" height="108" rx="11" fill="none" stroke="url(#border-glint-gradient)" stroke-width="2" stroke-linecap="round" stroke-dasharray="160 2033.1"/>
   <rect x="22" y="24" width="4" height="62" rx="2" fill="url(#brand-v)"/>
   <text x="46" y="50" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#E6EDF3">Jexplore</text>
   <text x="46" y="82" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" fill="#8B949E">Craft training — Web &amp; VR</text>

@@ -9,11 +9,10 @@ const TOP_LANGUAGES_COUNT = 5;
 const ACTIVITY_WEEKS = 12;
 const MS_PER_YEAR = 365 * 24 * 60 * 60 * 1000;
 const TYPING_SECONDS_PER_CHAR = 0.06;
-
+const AVATAR_SIZE = 256;
 const MONO_FONT = `'JetBrains Mono','SF Mono',Menlo,Consolas,'Liberation Mono',monospace`;
 const SANS_FONT = `-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif`;
 const MONO_CHAR_RATIO = 0.6;
-
 const BRAND = { yellow: "#F5C518", amber: "#F59418", orange: "#E85D04", ink: "#0D1117" };
 const BRAND_STOPS = [BRAND.yellow, BRAND.amber, BRAND.orange];
 const BRAND_DEEP_STOPS = ["#C99A0A", "#C46F0B", "#A84203"];
@@ -113,6 +112,11 @@ const STACK_GROUPS = [
   },
 ];
 
+const CONTACT_BUTTONS = [
+  { id: "email", label: "Email me", icon: "gmail", color: "#EA4335" },
+  { id: "linkedin", label: "LinkedIn", icon: "linkedin", color: "#0A66C2" },
+];
+
 const TERMINAL_LINES = [
   { kind: "command", text: "whoami" },
   { kind: "field", key: "place", value: "France" },
@@ -178,8 +182,35 @@ function brandGradient(id, stops = BRAND_STOPS) {
 const waveGradients = () =>
   `<defs>${brandGradient("brand")}${brandGradient("brand-deep", BRAND_DEEP_STOPS)}</defs>`;
 
-const panel = (theme, { width, height }) =>
-  `<rect x=".5" y=".5" width="${width - 1}" height="${height - 1}" rx="12" fill="${theme.panel}" stroke="${theme.border}"/>`;
+const PANEL_RADIUS = 12;
+const BORDER_GLINT = { length: 160, strokeWidth: 2, pixelsPerSecond: 290 };
+
+const panelFrame = (theme, { width, height }) =>
+  `<rect x=".5" y=".5" width="${width - 1}" height="${height - 1}" rx="${PANEL_RADIUS}" fill="${theme.panel}" stroke="${theme.border}"/>`;
+
+const roundedRectPerimeter = ({ width, height, radius }) =>
+  2 * (width + height) - 8 * radius + 2 * Math.PI * radius;
+
+function borderGlint({ width, height }) {
+  const { length, strokeWidth, pixelsPerSecond } = BORDER_GLINT;
+  const inset = strokeWidth / 2;
+  const frame = {
+    width: width - strokeWidth,
+    height: height - strokeWidth,
+    radius: PANEL_RADIUS - inset,
+  };
+  const perimeter = roundedRectPerimeter(frame).toFixed(1);
+  const duration = (perimeter / pixelsPerSecond).toFixed(2);
+  return `<style>
+    .border-glint { animation: border-glint ${duration}s linear infinite; }
+    @keyframes border-glint { to { stroke-dashoffset: -${perimeter}; } }
+  </style>
+  <defs>${brandGradient("border-glint-gradient")}</defs>
+  <rect class="border-glint" x="${inset}" y="${inset}" width="${frame.width}" height="${frame.height}" rx="${frame.radius}" fill="none" stroke="url(#border-glint-gradient)" stroke-width="${strokeWidth}" stroke-linecap="round" stroke-dasharray="${length} ${perimeter - length}"/>`;
+}
+
+const panel = (theme, size) => `${panelFrame(theme, size)}
+  ${borderGlint(size)}`;
 
 const monoWidth = (text, fontSize) => text.length * fontSize * MONO_CHAR_RATIO;
 
@@ -241,17 +272,6 @@ function renderFooter() {
   ${waveLayer({ id: "wave-back", size, wave: { baseline: 46, amplitude: 14, period: 600, closeY: size.height }, duration: 16, gradientId: "brand-deep" })}
   ${waveLayer({ id: "wave-front", size, wave: { baseline: 64, amplitude: 14, period: 400, closeY: size.height }, duration: 10, gradientId: "brand" })}`;
   return svgDocument({ ...size, body });
-}
-
-function renderDivider() {
-  const size = { width: 1000, height: 12 };
-  const style = `
-    .glint { animation: glint 4s linear infinite; }
-    @keyframes glint { from { transform: translateX(-160px); } to { transform: translateX(${size.width}px); } }`;
-  const body = `<defs>${brandGradient("brand")}</defs>
-  <line x1="0" y1="6" x2="${size.width}" y2="6" stroke="#8B949E" stroke-opacity=".35"/>
-  <rect class="glint" y="5" width="160" height="2" rx="1" fill="url(#brand)"/>`;
-  return svgDocument({ ...size, style, body });
 }
 
 function terminalPrompt(theme, command = "") {
@@ -491,6 +511,69 @@ function renderStack(theme, icons) {
   });
 }
 
+async function fetchAvatarDataUri() {
+  const response = await fetch(`https://github.com/${LOGIN}.png?size=${AVATAR_SIZE}`);
+  if (!response.ok) throw new Error(`Avatar request failed with status ${response.status}`);
+  const mimeType = response.headers.get("content-type") ?? "";
+  if (!mimeType.startsWith("image/"))
+    throw new Error(`Unexpected avatar content type: ${mimeType}`);
+  const avatarBytes = Buffer.from(await response.arrayBuffer());
+  return `data:${mimeType};base64,${avatarBytes.toString("base64")}`;
+}
+
+function contactAvatar(avatarUri, center) {
+  const { x, y } = center;
+  const radius = 72;
+  return `<clipPath id="avatar-clip"><circle cx="${x}" cy="${y}" r="${radius}"/></clipPath>
+  <image href="${avatarUri}" x="${x - radius}" y="${y - radius}" width="${radius * 2}" height="${radius * 2}" clip-path="url(#avatar-clip)" preserveAspectRatio="xMidYMid slice"/>
+  <circle cx="${x}" cy="${y}" r="${radius + 10}" fill="none" stroke="url(#brand)" stroke-width="4" stroke-linecap="round" stroke-dasharray="360 155" class="spin"/>`;
+}
+
+function coffeeCup(theme, origin) {
+  const steam = [22, 40, 58].map(
+    (x, index) =>
+      `<path d="M${x},38 c-8,-9 8,-17 0,-26 c-8,-9 8,-17 0,-26" fill="none" stroke="${theme.muted}" stroke-width="3" stroke-linecap="round" stroke-opacity=".6" class="steam" style="animation-delay:${index * 0.7}s"/>`,
+  );
+  return `<g transform="translate(${origin.x} ${origin.y})">
+    ${steam.join("")}
+    <path d="M80,60 h8 a14,14 0 0 1 0,28 h-8" fill="none" stroke="${BRAND.orange}" stroke-width="7"/>
+    <path d="M0,50 h80 v34 a28,28 0 0 1 -28,28 h-24 a28,28 0 0 1 -28,-28 Z" fill="url(#brand)"/>
+    <rect x="-14" y="116" width="122" height="6" rx="3" fill="${theme.border}"/>
+  </g>`;
+}
+
+function renderContact(theme, avatarUri) {
+  const size = { width: 1000, height: 240 };
+  const style = `
+    .spin { transform-box: fill-box; transform-origin: center; animation: spin 12s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .steam { animation: steam 2.4s ease-in-out infinite; }
+    @keyframes steam { 0% { opacity: 0; transform: translateY(8px); } 50% { opacity: 1; } 100% { opacity: 0; transform: translateY(-10px); } }`;
+  const body = `<defs>${brandGradient("brand")}</defs>
+  ${panel(theme, size)}
+  ${contactAvatar(avatarUri, { x: 136, y: 120 })}
+  <text x="262" y="70" font-family="${MONO_FONT}" font-size="15">${terminalPrompt(theme, "./contact --coffee")}</text>
+  <text x="260" y="122" class="rise" font-family="${SANS_FONT}" font-size="40" font-weight="800" fill="${theme.text}">Let's grab a coffee</text>
+  <text x="262" y="160" class="rise" style="animation-delay:.15s" font-family="${SANS_FONT}" font-size="19" fill="${theme.muted}">A project? A mission? A question?</text>
+  <text x="262" y="198" font-family="${SANS_FONT}" font-size="15" fill="${theme.muted}"><tspan class="pulse" fill="${theme.live}">●</tspan> Open to opportunities and projects</text>
+  ${coffeeCup(theme, { x: 836, y: 64 })}`;
+  return svgDocument({
+    ...size,
+    label: "Pierre Bermudez — Let's grab a coffee. A project? A mission? A question?",
+    style,
+    body,
+  });
+}
+
+function renderContactButton(theme, button, icon) {
+  const size = { width: 240, height: 56 };
+  const body = `${panelFrame(theme, size)}
+  <svg x="24" y="17" width="22" height="22" viewBox="${icon.viewBox}"><path fill="${button.color}" fill-rule="${icon.fillRule}" d="${icon.path}"/></svg>
+  <text x="60" y="34" font-family="${MONO_FONT}" font-size="17" fill="${theme.text}">${escapeXml(button.label)}</text>
+  <text x="216" y="34" text-anchor="end" font-family="${MONO_FONT}" font-size="17" fill="${theme.accent}">→</text>`;
+  return svgDocument({ ...size, label: button.label, body });
+}
+
 const STATS_QUERY = `query($login: String!) {
   user(login: $login) {
     repositories(ownerAffiliations: OWNER, isFork: false, privacy: PUBLIC, first: 100, orderBy: { field: PUSHED_AT, direction: DESC }) {
@@ -573,8 +656,7 @@ function parseIcon(slug, iconSvg) {
   return { path, viewBox, fillRule };
 }
 
-async function loadIcons() {
-  const slugs = STACK_GROUPS.flatMap((group) => group.items.map((item) => item.icon));
+async function loadIcons(slugs) {
   const entries = await Promise.all(
     slugs.map(async (slug) => {
       const iconSvg = await readFile(new URL(`${slug}.svg`, LOGOS_DIR), "utf8");
@@ -590,10 +672,17 @@ const stats = await loadStats();
 await mkdir(OUTPUT_DIR, { recursive: true });
 await writeAsset("header", renderHeader());
 await writeAsset("footer", renderFooter());
-await writeAsset("divider", renderDivider());
 await writeAsset("terminal", renderTerminal(THEME));
 await writeAsset("stats", renderStats(THEME, stats));
-await writeAsset("stack", renderStack(THEME, await loadIcons()));
+const stackIcons = STACK_GROUPS.flatMap((group) => group.items.map((item) => item.icon));
+const icons = await loadIcons([...stackIcons, ...CONTACT_BUTTONS.map((button) => button.icon)]);
+await writeAsset("stack", renderStack(THEME, icons));
+await writeAsset("contact", renderContact(THEME, await fetchAvatarDataUri()));
+for (const button of CONTACT_BUTTONS)
+  await writeAsset(
+    `button-${button.id}`,
+    renderContactButton(THEME, button, icons.get(button.icon)),
+  );
 for (const project of PROJECTS)
   await writeAsset(`project-${project.id}`, renderProject(THEME, project));
 console.log("Assets written.", {
