@@ -454,7 +454,7 @@ function renderQuote(theme) {
   return {
     ...size,
     label:
-      "My job isn't just to build UIs — it's to build products that users remember. Passionate about performance (SSR, code splitting), accessibility, and designing large-scale front-end systems.",
+      "My job isn't just to build UIs, it's to build products that users remember. Passionate about performance (SSR, code splitting), accessibility, and designing large-scale front-end systems.",
     body,
   };
 }

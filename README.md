@@ -1,6 +1,6 @@
 <a name="header"><img src="./assets/header.svg" width="100%" align="top" alt="Pierre Bermudez — Front-End / Full-Stack Developer" /></a>
 <a name="terminal"><img src="./assets/terminal.svg" width="100%" align="top" alt="pierre@github — Front-End / Full-Stack Developer based in France. Stack: React, Next.js, React Router, Node.js, TypeScript. Open to opportunities and projects." /></a>
-<a name="quote"><img src="./assets/quote.svg" width="100%" align="top" alt="My job isn't just to build UIs — it's to build products that users remember. Passionate about performance (SSR, code splitting), accessibility, and designing large-scale front-end systems." /></a>
+<a name="quote"><img src="./assets/quote.svg" width="100%" align="top" alt="My job isn't just to build UIs, it's to build products that users remember. Passionate about performance (SSR, code splitting), accessibility, and designing large-scale front-end systems." /></a>
 <a name="project-detectivebox"><img src="./assets/project-detectivebox.svg" width="100%" align="top" alt="Detectivebox — Immersive detective game. Next.js, XState, Tailwind, Postgres. In progress." /></a>
 <a name="project-jexplore"><img src="./assets/project-jexplore.svg" width="100%" align="top" alt="Jexplore — Craft training, Web and VR. Next.js, GraphQL, Zustand, TanStack Query. In progress." /></a>
 <a href="https://www.plai.fr/"><img src="./assets/project-plai.svg" width="100%" align="top" alt="Plai — Royalty-free music streaming. React Router, Vite, Tailwind, Postgres. Live." /></a>

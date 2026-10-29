@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1048" height="84" viewBox="0 0 1048 84" role="img" aria-label="My job isn&#39;t just to build UIs — it&#39;s to build products that users remember. Passionate about performance (SSR, code splitting), accessibility, and designing large-scale front-end systems.">
+<svg xmlns="http://www.w3.org/2000/svg" width="1048" height="84" viewBox="0 0 1048 84" role="img" aria-label="My job isn&#39;t just to build UIs, it&#39;s to build products that users remember. Passionate about performance (SSR, code splitting), accessibility, and designing large-scale front-end systems.">
 <style>
   .grow-x { transform-box: fill-box; transform-origin: left; animation: grow-x 1.2s cubic-bezier(.2,.8,.2,1) both; }
   .grow-y { transform-box: fill-box; transform-origin: bottom; animation: grow-y 1s cubic-bezier(.2,.8,.2,1) both; }
