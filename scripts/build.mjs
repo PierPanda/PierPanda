@@ -448,7 +448,7 @@ function renderQuote(theme) {
   const body = `<defs><linearGradient id="quote-bar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${BRAND.light}"/><stop offset="1" stop-color="${BRAND.strong}"/></linearGradient></defs>
   <rect x="0" y="4" width="4" height="60" rx="2" fill="url(#quote-bar)"/>
   <g font-family="${SANS_FONT}" font-size="17" class="reveal">
-    <text x="24" y="28" fill="${theme.text}">My job isn't just to build UIs — it's to build <tspan font-weight="700">products</tspan> that users remember.</text>
+    <text x="24" y="28" fill="${theme.text}">My job isn't just to build UIs, it's to build <tspan font-weight="700">products</tspan> that users remember.</text>
     <text x="24" y="56" fill="${theme.muted}">Passionate about performance (SSR, code splitting), accessibility, and designing large-scale front-end systems.</text>
   </g>`;
   return {
