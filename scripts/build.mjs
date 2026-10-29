@@ -678,7 +678,7 @@ function renderContact(theme, avatarUri) {
     .steam { animation: steam 2.4s ease-in-out infinite; }
     @keyframes steam { 0% { opacity: 0; transform: translateY(8px); } 50% { opacity: 1; } 100% { opacity: 0; transform: translateY(-10px); } }`;
   const body = `<defs>${brandGradient("brand")}</defs>
-  ${animatedPanel(theme, size)}
+  ${panelFrame(theme, size)}
   ${contactAvatar(avatarUri, { x: 136, y: 120 })}
   <text x="262" y="70" font-family="${MONO_FONT}" font-size="15">${terminalPrompt(theme, "./contact --coffee")}</text>
   <text x="260" y="122" class="rise" font-family="${SANS_FONT}" font-size="40" font-weight="800" fill="${theme.text}">Let's grab a coffee</text>
@@ -695,10 +695,14 @@ function renderContact(theme, avatarUri) {
 
 function renderContactButton(theme, button, icon) {
   const size = { width: 240, height: 56 };
+  const iconSize = 22;
+  const iconGap = 14;
+  const fontSize = 17;
+  const contentWidth = iconSize + iconGap + monoWidth(button.label, fontSize);
+  const iconX = (size.width - contentWidth) / 2;
   const body = `${panelFrame(theme, size)}
-  <svg x="24" y="17" width="22" height="22" viewBox="${icon.viewBox}"><path fill="${button.color}" fill-rule="${icon.fillRule}" d="${icon.path}"/></svg>
-  <text x="60" y="34" font-family="${MONO_FONT}" font-size="17" fill="${theme.text}">${escapeXml(button.label)}</text>
-  <text x="216" y="34" text-anchor="end" font-family="${MONO_FONT}" font-size="17" fill="${theme.accent}">→</text>`;
+  <svg x="${iconX}" y="17" width="${iconSize}" height="${iconSize}" viewBox="${icon.viewBox}"><path fill="${button.color}" fill-rule="${icon.fillRule}" d="${icon.path}"/></svg>
+  <text x="${iconX + iconSize + iconGap}" y="34" font-family="${MONO_FONT}" font-size="${fontSize}" fill="${theme.text}">${escapeXml(button.label)}</text>`;
   return { ...size, label: button.label, body };
 }
 
