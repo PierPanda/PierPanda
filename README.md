@@ -1,7 +1,9 @@
 <picture><img src="./assets/header.svg" width="100%" alt="Pierre Bermudez — Front-End / Full-Stack Developer" /></picture>
 <picture><img src="./assets/terminal.svg" width="100%" alt="pierre@github — Front-End / Full-Stack Developer based in France. Stack: React, Next.js, React Router, Node.js, TypeScript. Open to opportunities and projects." /></picture>
+
 > My job isn't just to build UIs — it's to build **products** that users remember.  
 > Passionate about performance (SSR, code splitting), accessibility, and designing large-scale front-end systems.
+> 
 <picture><img src="./assets/project-detectivebox.svg" width="100%" alt="Detectivebox — Immersive detective game. Next.js, XState, Tailwind, Postgres. In progress." /></picture>
 <picture><img src="./assets/project-jexplore.svg" width="100%" alt="Jexplore — Craft training, Web and VR. Next.js, GraphQL, Zustand, TanStack Query. In progress." /></picture>
 <a href="https://www.plai.fr/"><img src="./assets/project-plai.svg" width="100%" alt="Plai — Royalty-free music streaming. React Router, Vite, Tailwind, Postgres. Live." /></a>
