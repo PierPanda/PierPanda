@@ -1,4 +1,13 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
+import {
+  ANIMATED_SLICES,
+  BRAND,
+  MONO_FONT,
+  SANS_FONT,
+  THEME,
+  WRAPPER,
+  WRAPPER_DECOR,
+} from "./theme.mjs";
 
 const LOGIN = "PierPanda";
 const OUTPUT_DIR = new URL("../assets/", import.meta.url);
@@ -8,38 +17,10 @@ const LANGUAGE_WINDOW_YEARS = 3;
 const TOP_LANGUAGES_COUNT = 5;
 const ACTIVITY_WEEKS = 12;
 const MS_PER_YEAR = 365 * 24 * 60 * 60 * 1000;
-const TYPING_SECONDS_PER_CHAR = 0.06;
 const AVATAR_SIZE = 256;
-const MONO_FONT = `'JetBrains Mono','SF Mono',Menlo,Consolas,'Liberation Mono',monospace`;
-const SANS_FONT = `-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif`;
 const MONO_CHAR_RATIO = 0.6;
-const BRAND = { light: "#BEF264", mid: "#4ADE80", strong: "#10B981", ink: "#0D1117" };
 const BRAND_STOPS = [BRAND.light, BRAND.mid, BRAND.strong];
-const BRAND_DEEP_STOPS = ["#86B33A", "#2F9E5E", "#0B7F5C"];
 
-const THEME = {
-  panel: "#161B22",
-  border: "#30363D",
-  text: "#E6EDF3",
-  muted: "#8B949E",
-  accent: BRAND.light,
-  accentStrong: BRAND.strong,
-  inset: "#0D1117",
-  live: "#3FB950",
-  building: "#D29922",
-  pending: "#58A6FF",
-};
-
-const WRAPPER = { width: 1048, padding: 24, gap: 16, radius: 20, fill: "#12161D" };
-const WRAPPER_DECOR = {
-  dotSpacing: 24,
-  dotRadius: 1,
-  dotOpacity: 0.07,
-  haloColor: BRAND.strong,
-  haloOpacity: 0.16,
-  haloRadius: 560,
-  haloFlatten: 0.45,
-};
 const CONTENT_WIDTH = WRAPPER.width - 2 * WRAPPER.padding;
 const HALF_SLICE_WIDTH = WRAPPER.width / 2;
 const PROJECT_CARD_WIDTH = (CONTENT_WIDTH - WRAPPER.gap) / 2;
@@ -218,8 +199,6 @@ function brandGradient(id, stops = BRAND_STOPS) {
 </linearGradient>`;
 }
 
-const waveGradients = () =>
-  `<defs>${brandGradient("brand")}${brandGradient("brand-deep", BRAND_DEEP_STOPS)}</defs>`;
 
 const PANEL_RADIUS = 12;
 const BORDER_GLINT = { length: 160, strokeWidth: 2, pixelsPerSecond: 290 };
@@ -254,14 +233,6 @@ const animatedPanel = (theme, size) => `${panelFrame(theme, size)}
 const SEAM_BLEED = 1;
 
 const WRAPPER_OUTLINES = {
-  top: ({ width, height }, r) => ({
-    fill: `M0,${height + SEAM_BLEED} V${r} A${r},${r} 0 0 1 ${r},0 H${width - r} A${r},${r} 0 0 1 ${width},${r} V${height + SEAM_BLEED} Z`,
-    border: `M.5,${height} V${r} A${r - 0.5},${r - 0.5} 0 0 1 ${r},.5 H${width - r} A${r - 0.5},${r - 0.5} 0 0 1 ${width - 0.5},${r} V${height}`,
-  }),
-  bottom: ({ width, height }, r) => ({
-    fill: `M0,${-SEAM_BLEED} H${width} V${height - r} A${r},${r} 0 0 1 ${width - r},${height} H${r} A${r},${r} 0 0 1 0,${height - r} Z`,
-    border: `M.5,0 V${height - r} A${r - 0.5},${r - 0.5} 0 0 0 ${r},${height - 0.5} H${width - r} A${r - 0.5},${r - 0.5} 0 0 0 ${width - 0.5},${height - r} V0`,
-  }),
   full: ({ width, height }) => ({
     fill: `M0,${-SEAM_BLEED} H${width} V${height + SEAM_BLEED} H0 Z`,
     border: `M.5,0 V${height} M${width - 0.5},0 V${height}`,
@@ -332,57 +303,10 @@ function blinkingCursor({ x, y, fontSize, color, delay }) {
   return `<rect x="${x}" y="${y - fontSize * 0.8}" width="${fontSize * 0.55}" height="${fontSize}" fill="${color}" style="${timing}"/>`;
 }
 
-function typedText({ id, text, x, y, fontSize, color, delay }) {
-  const textWidth = monoWidth(text, fontSize);
-  const duration = text.length * TYPING_SECONDS_PER_CHAR;
-  const typing = `animation: grow-x ${duration}s steps(${text.length}) ${delay}s both`;
-  return `<clipPath id="${id}">
-    <rect x="${x}" y="${y - fontSize}" width="${textWidth}" height="${fontSize * 1.4}" class="grow-x" style="${typing}"/>
-  </clipPath>
-  <text x="${x}" y="${y}" font-family="${MONO_FONT}" font-size="${fontSize}" fill="${color}" textLength="${textWidth}" clip-path="url(#${id})">${escapeXml(text)}</text>
-  ${blinkingCursor({ x: x + textWidth + 4, y, fontSize, color, delay: delay + duration })}`;
-}
 
-function wavePath({ width, baseline, amplitude, period, closeY }) {
-  const half = period / 2;
-  const segmentCount = Math.ceil((width + period) / half);
-  const tail = Array(segmentCount - 1)
-    .fill(`t${half},0`)
-    .join(" ");
-  return `M0,${baseline} q${period / 4},${-2 * amplitude} ${half},0 ${tail} V${closeY} H0 Z`;
-}
 
-function waveLayer({ id, size, wave, duration, gradientId }) {
-  const path = wavePath({ width: size.width, ...wave });
-  return `<style>
-    .${id} { animation: ${id} ${duration}s linear infinite; }
-    @keyframes ${id} { to { transform: translateX(-${wave.period}px); } }
-  </style>
-  <clipPath id="${id}"><path class="${id}" d="${path}"/></clipPath>
-  <rect width="${size.width}" height="${size.height}" fill="url(#${gradientId})" clip-path="url(#${id})"/>`;
-}
 
-function renderHeader() {
-  const size = { width: WRAPPER.width, height: 250 };
-  const centerX = size.width / 2;
-  const tagline = "> I build interfaces that make sense.";
-  const taglineX = (size.width - monoWidth(tagline, 18)) / 2;
-  const body = `${waveGradients()}
-  ${waveLayer({ id: "wave-back", size, wave: { baseline: 214, amplitude: 14, period: 600, closeY: 0 }, duration: 16, gradientId: "brand-deep" })}
-  ${waveLayer({ id: "wave-front", size, wave: { baseline: 198, amplitude: 14, period: 400, closeY: 0 }, duration: 10, gradientId: "brand" })}
-  <text x="${centerX}" y="92" class="rise" text-anchor="middle" font-family="${SANS_FONT}" font-size="60" font-weight="800" fill="${BRAND.ink}" letter-spacing="1">Pierre Bermudez</text>
-  <text x="${centerX}" y="130" class="rise" style="animation-delay:.2s" text-anchor="middle" font-family="${SANS_FONT}" font-size="17" font-weight="600" fill="${BRAND.ink}" fill-opacity=".75" letter-spacing="5">FRONT-END / FULL-STACK DEVELOPER</text>
-  ${typedText({ id: "tagline", text: tagline, x: taglineX, y: 170, fontSize: 18, color: BRAND.ink, delay: 0.9 })}`;
-  return { ...size, label: "Pierre Bermudez — Front-End / Full-Stack Developer", body };
-}
 
-function renderFooter() {
-  const size = { width: WRAPPER.width, height: 110 };
-  const body = `${waveGradients()}
-  ${waveLayer({ id: "wave-back", size, wave: { baseline: 46, amplitude: 14, period: 600, closeY: size.height }, duration: 16, gradientId: "brand-deep" })}
-  ${waveLayer({ id: "wave-front", size, wave: { baseline: 64, amplitude: 14, period: 400, closeY: size.height }, duration: 10, gradientId: "brand" })}`;
-  return { ...size, body };
-}
 
 function terminalPrompt(theme, command = "") {
   return `<tspan fill="${theme.accent}">pierre@github</tspan> <tspan fill="${theme.muted}">~</tspan> <tspan fill="${theme.accentStrong}">$</tspan> <tspan fill="${theme.text}">${escapeXml(command)}</tspan>`;
@@ -849,10 +773,8 @@ const stats = await loadStats();
 const stackIcons = STACK_GROUPS.flatMap((group) => group.items.map((item) => item.icon));
 const icons = await loadIcons([...stackIcons, ...CONTACT_BUTTONS.map((button) => button.icon)]);
 const avatarUri = await fetchAvatarDataUri();
-const header = renderHeader();
-const footer = renderFooter();
 const { placed, cardHeight } = placeSlices([
-  { name: "header", kind: "top", block: header, origin: { x: 0, y: 0 } },
+  { name: "header", kind: "animated", block: ANIMATED_SLICES.header, origin: { x: 0, y: 0 } },
   { name: "terminal", kind: "full", block: renderTerminal(THEME) },
   { name: "quote", kind: "full", block: renderQuote(THEME) },
   ...PROJECTS.map(projectSlice),
@@ -860,11 +782,12 @@ const { placed, cardHeight } = placeSlices([
   { name: "stats", kind: "full", block: renderStats(THEME, stats) },
   { name: "contact", kind: "full", block: renderContact(THEME, avatarUri) },
   ...CONTACT_BUTTONS.map(buttonSlice),
-  { name: "footer", kind: "bottom", block: footer, origin: { x: 0, y: 0 } },
+  { name: "footer", kind: "animated", block: ANIMATED_SLICES.footer, origin: { x: 0, y: 0 } },
 ]);
-const card = { haloCenters: [header.height, cardHeight - footer.height] };
+const card = { haloCenters: [ANIMATED_SLICES.header.height, cardHeight - ANIMATED_SLICES.footer.height] };
 await mkdir(OUTPUT_DIR, { recursive: true });
-for (const slice of placed) await writeAsset(slice.name, renderSlice({ ...slice, card }));
+const svgSlices = placed.filter((slice) => slice.kind !== "animated");
+for (const slice of svgSlices) await writeAsset(slice.name, renderSlice({ ...slice, card }));
 console.log("Assets written.", {
   contributions: stats.contributions,
   languages: stats.topLanguages.map(({ name }) => name),
