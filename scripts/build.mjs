@@ -29,15 +29,11 @@ const THEME = {
   building: "#D29922",
 };
 
-// GitHub strips CSS from a README, so the wrapper card is drawn by the assets themselves.
-// Every asset is one horizontal slice of the card. All slices share one width, so they share one scale.
 const WRAPPER = { width: 1048, padding: 24, gap: 16, radius: 20, fill: "#010409" };
 const CONTENT_WIDTH = WRAPPER.width - 2 * WRAPPER.padding;
 const HALF_SLICE_WIDTH = WRAPPER.width / 2;
 const PROJECT_CARD_WIDTH = (CONTENT_WIDTH - WRAPPER.gap) / 2;
-
 const STATUS_LABELS = { live: "Live", building: "In progress" };
-
 const PROJECTS = [
   {
     id: "detectivebox",
@@ -82,7 +78,6 @@ const PROJECTS = [
     column: "right",
   },
 ];
-
 const STACK_GROUPS = [
   {
     label: "front-end",
@@ -221,8 +216,6 @@ function borderGlint({ width, height }) {
 const animatedPanel = (theme, size) => `${panelFrame(theme, size)}
   ${borderGlint(size)}`;
 
-// The border stays open where a slice touches its neighbours. On those edges the fill bleeds past
-// the viewBox: an edge that ends exactly on it is antialiased and lets the page show through.
 const SEAM_BLEED = 1;
 
 const WRAPPER_OUTLINES = {
