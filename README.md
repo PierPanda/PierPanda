@@ -1,4 +1,4 @@
-<a name="header"><img src="./assets/header.svg" width="100%" align="top" alt="Pierre Bermudez — Front-End / Full-Stack Developer" /></a>
+<a name="header"><img src="./assets/header.webp" width="100%" align="top" alt="Pierre Bermudez — Front-End / Full-Stack Developer" /></a>
 <a name="terminal"><img src="./assets/terminal.svg" width="100%" align="top" alt="pierre@github — Front-End / Full-Stack Developer based in France. Stack: React, Next.js, React Router, Node.js, TypeScript. Open to opportunities and projects." /></a>
 <a name="quote"><img src="./assets/quote.svg" width="100%" align="top" alt="My job isn't just to build UIs, it's to build products that users remember. Passionate about performance (SSR, code splitting), accessibility, and designing large-scale front-end systems." /></a>
 <a name="project-detectivebox"><img src="./assets/project-detectivebox.svg" width="100%" align="top" alt="Detectivebox — Immersive detective game. Next.js, XState, Tailwind, Postgres. In progress." /></a>
@@ -12,4 +12,4 @@
 <a name="stats"><img src="./assets/stats.svg" width="100%" align="top" alt="GitHub activity: contributions, pull requests, public repositories, stars, the last 12 weeks and top languages. Refreshed daily." /></a>
 <a name="contact"><img src="./assets/contact.svg" width="100%" align="top" alt="Pierre Bermudez — Let's grab a coffee. A project? A mission? A question? Open to opportunities and projects." /></a>
 <a href="mailto:bermudezpierre@gmail.com?subject=Let%27s%20grab%20a%20coffee"><img src="./assets/button-email.svg" width="50%" align="top" alt="Email me: bermudezpierre@gmail.com" /></a><a href="https://www.linkedin.com/in/pierre-bermudez-b6247891/"><img src="./assets/button-linkedin.svg" width="50%" align="top" alt="LinkedIn: Pierre Bermudez" /></a>
-<a name="footer"><img src="./assets/footer.svg" width="100%" align="top" alt="" /></a>
+<a name="footer"><img src="./assets/footer.webp" width="100%" align="top" alt="" /></a>
