@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="240" height="56" viewBox="0 0 240 56" role="img" aria-label="Email me">
+<svg xmlns="http://www.w3.org/2000/svg" width="524" height="72" viewBox="0 0 524 72" role="img" aria-label="Email me">
 <style>
   .grow-x { transform-box: fill-box; transform-origin: left; animation: grow-x 1.2s cubic-bezier(.2,.8,.2,1) both; }
   .grow-y { transform-box: fill-box; transform-origin: bottom; animation: grow-y 1s cubic-bezier(.2,.8,.2,1) both; }
@@ -12,8 +12,13 @@
   @keyframes blink { 50% { opacity: 0; } }
   @keyframes pulse { 50% { opacity: .35; } }
   @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }</style>
-<rect x=".5" y=".5" width="239" height="55" rx="12" fill="#161B22" stroke="#30363D"/>
+<clipPath id="wrapper-clip"><path d="M0,-1 H525 V73 H0 Z"/></clipPath>
+<g clip-path="url(#wrapper-clip)">
+  <path d="M0,-1 H525 V73 H0 Z" fill="#010409"/>
+  <g transform="translate(276 16)"><rect x=".5" y=".5" width="239" height="55" rx="12" fill="#161B22" stroke="#30363D"/>
   <svg x="24" y="17" width="22" height="22" viewBox="0 0 24 24"><path fill="#EA4335" fill-rule="nonzero" d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
   <text x="60" y="34" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="17" fill="#E6EDF3">Email me</text>
-  <text x="216" y="34" text-anchor="end" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="17" fill="#F5C518">→</text>
+  <text x="216" y="34" text-anchor="end" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="17" fill="#F5C518">→</text></g>
+</g>
+<path d="M.5,0 V72" fill="none" stroke="#30363D"/>
 </svg>

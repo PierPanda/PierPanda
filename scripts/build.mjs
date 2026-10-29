@@ -29,6 +29,13 @@ const THEME = {
   building: "#D29922",
 };
 
+// GitHub strips CSS from a README, so the wrapper card is drawn by the assets themselves.
+// Every asset is one horizontal slice of the card. All slices share one width, so they share one scale.
+const WRAPPER = { width: 1048, padding: 24, gap: 16, radius: 20, fill: "#010409" };
+const CONTENT_WIDTH = WRAPPER.width - 2 * WRAPPER.padding;
+const HALF_SLICE_WIDTH = WRAPPER.width / 2;
+const PROJECT_CARD_WIDTH = (CONTENT_WIDTH - WRAPPER.gap) / 2;
+
 const STATUS_LABELS = { live: "Live", building: "In progress" };
 
 const PROJECTS = [
@@ -63,6 +70,7 @@ const PROJECTS = [
     summary: "Remove & edit image backgrounds in one click",
     stack: ["React", "React Router", "Tailwind", "Vercel"],
     status: "live",
+    column: "left",
   },
   {
     id: "astro",
@@ -71,6 +79,7 @@ const PROJECTS = [
     summary: "Explore the wonders of the solar system",
     stack: ["Vite", "JavaScript", "Three.js", "Tailwind"],
     status: "live",
+    column: "right",
   },
 ];
 
@@ -113,8 +122,8 @@ const STACK_GROUPS = [
 ];
 
 const CONTACT_BUTTONS = [
-  { id: "email", label: "Email me", icon: "gmail", color: "#EA4335" },
-  { id: "linkedin", label: "LinkedIn", icon: "linkedin", color: "#0A66C2" },
+  { id: "email", label: "Email me", icon: "gmail", color: "#EA4335", column: "left" },
+  { id: "linkedin", label: "LinkedIn", icon: "linkedin", color: "#0A66C2", column: "right" },
 ];
 
 const TERMINAL_LINES = [
@@ -209,8 +218,57 @@ function borderGlint({ width, height }) {
   <rect class="border-glint" x="${inset}" y="${inset}" width="${frame.width}" height="${frame.height}" rx="${frame.radius}" fill="none" stroke="url(#border-glint-gradient)" stroke-width="${strokeWidth}" stroke-linecap="round" stroke-dasharray="${length} ${perimeter - length}"/>`;
 }
 
-const panel = (theme, size) => `${panelFrame(theme, size)}
+const animatedPanel = (theme, size) => `${panelFrame(theme, size)}
   ${borderGlint(size)}`;
+
+// The border stays open where a slice touches its neighbours. On those edges the fill bleeds past
+// the viewBox: an edge that ends exactly on it is antialiased and lets the page show through.
+const SEAM_BLEED = 1;
+
+const WRAPPER_OUTLINES = {
+  top: ({ width, height }, r) => ({
+    fill: `M0,${height + SEAM_BLEED} V${r} A${r},${r} 0 0 1 ${r},0 H${width - r} A${r},${r} 0 0 1 ${width},${r} V${height + SEAM_BLEED} Z`,
+    border: `M.5,${height} V${r} A${r - 0.5},${r - 0.5} 0 0 1 ${r},.5 H${width - r} A${r - 0.5},${r - 0.5} 0 0 1 ${width - 0.5},${r} V${height}`,
+  }),
+  bottom: ({ width, height }, r) => ({
+    fill: `M0,${-SEAM_BLEED} H${width} V${height - r} A${r},${r} 0 0 1 ${width - r},${height} H${r} A${r},${r} 0 0 1 0,${height - r} Z`,
+    border: `M.5,0 V${height - r} A${r - 0.5},${r - 0.5} 0 0 0 ${r},${height - 0.5} H${width - r} A${r - 0.5},${r - 0.5} 0 0 0 ${width - 0.5},${height - r} V0`,
+  }),
+  full: ({ width, height }) => ({
+    fill: `M0,${-SEAM_BLEED} H${width} V${height + SEAM_BLEED} H0 Z`,
+    border: `M.5,0 V${height} M${width - 0.5},0 V${height}`,
+  }),
+  left: ({ width, height }) => ({
+    fill: `M0,${-SEAM_BLEED} H${width + SEAM_BLEED} V${height + SEAM_BLEED} H0 Z`,
+    border: `M.5,0 V${height}`,
+  }),
+  right: ({ width, height }) => ({
+    fill: `M${-SEAM_BLEED},${-SEAM_BLEED} H${width} V${height + SEAM_BLEED} H${-SEAM_BLEED} Z`,
+    border: `M${width - 0.5},0 V${height}`,
+  }),
+};
+
+const isHalfSlice = (kind) => kind === "left" || kind === "right";
+
+function renderSlice({ kind, block, origin = { x: WRAPPER.padding, y: WRAPPER.gap } }) {
+  const size = {
+    width: isHalfSlice(kind) ? HALF_SLICE_WIDTH : WRAPPER.width,
+    height: origin.y + block.height,
+  };
+  const outline = WRAPPER_OUTLINES[kind](size, WRAPPER.radius);
+  const body = `<clipPath id="wrapper-clip"><path d="${outline.fill}"/></clipPath>
+<g clip-path="url(#wrapper-clip)">
+  <path d="${outline.fill}" fill="${WRAPPER.fill}"/>
+  <g transform="translate(${origin.x} ${origin.y})">${block.body}</g>
+</g>
+<path d="${outline.border}" fill="none" stroke="${THEME.border}"/>`;
+  return svgDocument({ ...size, label: block.label, style: block.style, body });
+}
+
+function halfSliceOrigin(column, blockWidth) {
+  const x = column === "left" ? HALF_SLICE_WIDTH - WRAPPER.gap / 2 - blockWidth : WRAPPER.gap / 2;
+  return { x, y: WRAPPER.gap };
+}
 
 const monoWidth = (text, fontSize) => text.length * fontSize * MONO_CHAR_RATIO;
 
@@ -250,28 +308,25 @@ function waveLayer({ id, size, wave, duration, gradientId }) {
 }
 
 function renderHeader() {
-  const size = { width: 1200, height: 250 };
+  const size = { width: WRAPPER.width, height: 250 };
+  const centerX = size.width / 2;
   const tagline = "> I build interfaces that make sense.";
   const taglineX = (size.width - monoWidth(tagline, 18)) / 2;
   const body = `${waveGradients()}
   ${waveLayer({ id: "wave-back", size, wave: { baseline: 214, amplitude: 14, period: 600, closeY: 0 }, duration: 16, gradientId: "brand-deep" })}
   ${waveLayer({ id: "wave-front", size, wave: { baseline: 198, amplitude: 14, period: 400, closeY: 0 }, duration: 10, gradientId: "brand" })}
-  <text x="600" y="92" class="rise" text-anchor="middle" font-family="${SANS_FONT}" font-size="60" font-weight="800" fill="${BRAND.ink}" letter-spacing="1">Pierre Bermudez</text>
-  <text x="600" y="130" class="rise" style="animation-delay:.2s" text-anchor="middle" font-family="${SANS_FONT}" font-size="17" font-weight="600" fill="${BRAND.ink}" fill-opacity=".75" letter-spacing="5">FRONT-END / FULL-STACK DEVELOPER</text>
+  <text x="${centerX}" y="92" class="rise" text-anchor="middle" font-family="${SANS_FONT}" font-size="60" font-weight="800" fill="${BRAND.ink}" letter-spacing="1">Pierre Bermudez</text>
+  <text x="${centerX}" y="130" class="rise" style="animation-delay:.2s" text-anchor="middle" font-family="${SANS_FONT}" font-size="17" font-weight="600" fill="${BRAND.ink}" fill-opacity=".75" letter-spacing="5">FRONT-END / FULL-STACK DEVELOPER</text>
   ${typedText({ id: "tagline", text: tagline, x: taglineX, y: 170, fontSize: 18, color: BRAND.ink, delay: 0.9 })}`;
-  return svgDocument({
-    ...size,
-    label: "Pierre Bermudez — Front-End / Full-Stack Developer",
-    body,
-  });
+  return { ...size, label: "Pierre Bermudez — Front-End / Full-Stack Developer", body };
 }
 
 function renderFooter() {
-  const size = { width: 1200, height: 110 };
+  const size = { width: WRAPPER.width, height: 110 };
   const body = `${waveGradients()}
   ${waveLayer({ id: "wave-back", size, wave: { baseline: 46, amplitude: 14, period: 600, closeY: size.height }, duration: 16, gradientId: "brand-deep" })}
   ${waveLayer({ id: "wave-front", size, wave: { baseline: 64, amplitude: 14, period: 400, closeY: size.height }, duration: 10, gradientId: "brand" })}`;
-  return svgDocument({ ...size, body });
+  return { ...size, body };
 }
 
 function terminalPrompt(theme, command = "") {
@@ -320,17 +375,33 @@ function renderTerminal(theme) {
   const lastLineY = layout.top + (TERMINAL_LINES.length - 1) * layout.lineHeight;
   const promptWidth = monoWidth("pierre@github ~ $ ", layout.fontSize);
   const cursorDelay = 0.2 + TERMINAL_LINES.length * layout.stepSeconds;
-  const body = `${panel(theme, { width: layout.width, height })}
+  const body = `${animatedPanel(theme, { width: layout.width, height })}
   ${terminalWindowChrome(theme, layout.width)}
   <g font-family="${MONO_FONT}" font-size="${layout.fontSize}">${lines.join("\n  ")}</g>
   ${blinkingCursor({ x: layout.left + promptWidth, y: lastLineY, fontSize: layout.fontSize, color: theme.accent, delay: cursorDelay })}`;
-  return svgDocument({
+  return {
     width: layout.width,
     height,
     label:
       "pierre@github — Front-End / Full-Stack Developer based in France, open to opportunities",
     body,
-  });
+  };
+}
+
+function renderQuote(theme) {
+  const size = { width: CONTENT_WIDTH, height: 68 };
+  const body = `<defs><linearGradient id="quote-bar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${BRAND.yellow}"/><stop offset="1" stop-color="${BRAND.orange}"/></linearGradient></defs>
+  <rect x="0" y="4" width="4" height="60" rx="2" fill="url(#quote-bar)"/>
+  <g font-family="${SANS_FONT}" font-size="17" class="reveal">
+    <text x="24" y="28" fill="${theme.text}">My job isn't just to build UIs — it's to build <tspan font-weight="700">products</tspan> that users remember.</text>
+    <text x="24" y="56" fill="${theme.muted}">Passionate about performance (SSR, code splitting), accessibility, and designing large-scale front-end systems.</text>
+  </g>`;
+  return {
+    ...size,
+    label:
+      "My job isn't just to build UIs — it's to build products that users remember. Passionate about performance (SSR, code splitting), accessibility, and designing large-scale front-end systems.",
+    body,
+  };
 }
 
 function statusText(theme, { status, x, y, fontSize }) {
@@ -341,29 +412,30 @@ function statusText(theme, { status, x, y, fontSize }) {
 function renderClientRow(theme, project) {
   const size = { width: 1000, height: 110 };
   const body = `<defs><linearGradient id="brand-v" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${BRAND.yellow}"/><stop offset="1" stop-color="${BRAND.orange}"/></linearGradient></defs>
-  ${panel(theme, size)}
+  ${panelFrame(theme, size)}
   <rect x="22" y="24" width="4" height="62" rx="2" fill="url(#brand-v)"/>
   <text x="46" y="50" font-family="${SANS_FONT}" font-size="26" font-weight="700" fill="${theme.text}">${escapeXml(project.name)}</text>
   <text x="46" y="82" font-family="${SANS_FONT}" font-size="17" fill="${theme.muted}">${escapeXml(project.summary)}</text>
   <text x="966" y="50" text-anchor="end" font-family="${MONO_FONT}" font-size="15" fill="${theme.accent}">${escapeXml(project.stack.join(" · "))}</text>
   ${statusText(theme, { status: project.status, x: 966, y: 82, fontSize: 15 })}`;
-  return svgDocument({
+  return {
     ...size,
     label: `${project.name} — ${project.summary} (${STATUS_LABELS[project.status]})`,
     body,
-  });
+  };
 }
 
 function renderProjectCard(theme, project) {
-  const size = { width: 500, height: 190 };
+  const size = { width: PROJECT_CARD_WIDTH, height: 190 };
+  const contentRight = size.width - 32;
   const body = `<defs>${brandGradient("brand")}</defs>
-  ${panel(theme, size)}
+  ${panelFrame(theme, size)}
   <text x="32" y="58" font-family="${SANS_FONT}" font-size="26" font-weight="700" fill="${theme.text}">${escapeXml(project.name)} <tspan fill="${theme.accent}" font-size="20">↗</tspan></text>
-  ${statusText(theme, { status: project.status, x: 468, y: 56, fontSize: 14 })}
+  ${statusText(theme, { status: project.status, x: contentRight, y: 56, fontSize: 14 })}
   <text x="32" y="96" font-family="${SANS_FONT}" font-size="17" fill="${theme.muted}">${escapeXml(project.summary)}</text>
   <text x="32" y="144" font-family="${MONO_FONT}" font-size="14" fill="${theme.accent}">${escapeXml(project.stack.join(" · "))}</text>
-  <rect x="32" y="162" width="436" height="3" rx="1.5" fill="url(#brand)" class="grow-x"/>`;
-  return svgDocument({ ...size, label: `${project.name} — ${project.summary}`, body });
+  <rect x="32" y="162" width="${contentRight - 32}" height="3" rx="1.5" fill="url(#brand)" class="grow-x"/>`;
+  return { ...size, label: `${project.name} — ${project.summary}`, body };
 }
 
 const renderProject = (theme, project) =>
@@ -419,17 +491,17 @@ function statsLanguages(theme, topLanguages) {
 function renderStats(theme, stats) {
   const size = { width: 1000, height: 380 };
   const body = `<defs>${brandGradient("brand")}</defs>
-  ${panel(theme, size)}
+  ${animatedPanel(theme, size)}
   <text x="36" y="48" font-family="${MONO_FONT}" font-size="16" fill="${theme.accent}">~/ stats <tspan fill="${theme.muted}">--github</tspan></text>
   ${statsKpis(theme, stats)}
   <line x1="36" y1="166" x2="964" y2="166" stroke="${theme.border}"/>
   ${statsActivity(theme, stats.weeklyActivity)}
   ${statsLanguages(theme, stats.topLanguages)}`;
-  return svgDocument({
+  return {
     ...size,
     label: `GitHub activity: ${stats.contributions} contributions in the last year`,
     body,
-  });
+  };
 }
 
 const STACK_LAYOUT = {
@@ -504,11 +576,11 @@ function renderStack(theme, icons) {
   });
   const names = STACK_GROUPS.flatMap((group) => group.items.map((item) => item.name)).join(", ");
   const size = { width: STACK_LAYOUT.width, height };
-  return svgDocument({
+  return {
     ...size,
     label: `Tech stack: ${names}`,
-    body: `${panel(theme, size)}\n  ${groupMarkup.join("\n  ")}`,
-  });
+    body: `${animatedPanel(theme, size)}\n  ${groupMarkup.join("\n  ")}`,
+  };
 }
 
 async function fetchAvatarDataUri() {
@@ -550,19 +622,19 @@ function renderContact(theme, avatarUri) {
     .steam { animation: steam 2.4s ease-in-out infinite; }
     @keyframes steam { 0% { opacity: 0; transform: translateY(8px); } 50% { opacity: 1; } 100% { opacity: 0; transform: translateY(-10px); } }`;
   const body = `<defs>${brandGradient("brand")}</defs>
-  ${panel(theme, size)}
+  ${animatedPanel(theme, size)}
   ${contactAvatar(avatarUri, { x: 136, y: 120 })}
   <text x="262" y="70" font-family="${MONO_FONT}" font-size="15">${terminalPrompt(theme, "./contact --coffee")}</text>
   <text x="260" y="122" class="rise" font-family="${SANS_FONT}" font-size="40" font-weight="800" fill="${theme.text}">Let's grab a coffee</text>
   <text x="262" y="160" class="rise" style="animation-delay:.15s" font-family="${SANS_FONT}" font-size="19" fill="${theme.muted}">A project? A mission? A question?</text>
   <text x="262" y="198" font-family="${SANS_FONT}" font-size="15" fill="${theme.muted}"><tspan class="pulse" fill="${theme.live}">●</tspan> Open to opportunities and projects</text>
   ${coffeeCup(theme, { x: 836, y: 64 })}`;
-  return svgDocument({
+  return {
     ...size,
     label: "Pierre Bermudez — Let's grab a coffee. A project? A mission? A question?",
     style,
     body,
-  });
+  };
 }
 
 function renderContactButton(theme, button, icon) {
@@ -571,7 +643,7 @@ function renderContactButton(theme, button, icon) {
   <svg x="24" y="17" width="22" height="22" viewBox="${icon.viewBox}"><path fill="${button.color}" fill-rule="${icon.fillRule}" d="${icon.path}"/></svg>
   <text x="60" y="34" font-family="${MONO_FONT}" font-size="17" fill="${theme.text}">${escapeXml(button.label)}</text>
   <text x="216" y="34" text-anchor="end" font-family="${MONO_FONT}" font-size="17" fill="${theme.accent}">→</text>`;
-  return svgDocument({ ...size, label: button.label, body });
+  return { ...size, label: button.label, body };
 }
 
 const STATS_QUERY = `query($login: String!) {
@@ -668,23 +740,35 @@ async function loadIcons(slugs) {
 
 const writeAsset = (name, svg) => writeFile(new URL(`${name}.svg`, OUTPUT_DIR), svg);
 
+const writeSlice = (name, slice) => writeAsset(name, renderSlice(slice));
+
+function projectSlice(project) {
+  const block = renderProject(THEME, project);
+  if (project.kind === "client") return { kind: "full", block };
+  return { kind: project.column, block, origin: halfSliceOrigin(project.column, block.width) };
+}
+
 const stats = await loadStats();
-await mkdir(OUTPUT_DIR, { recursive: true });
-await writeAsset("header", renderHeader());
-await writeAsset("footer", renderFooter());
-await writeAsset("terminal", renderTerminal(THEME));
-await writeAsset("stats", renderStats(THEME, stats));
 const stackIcons = STACK_GROUPS.flatMap((group) => group.items.map((item) => item.icon));
 const icons = await loadIcons([...stackIcons, ...CONTACT_BUTTONS.map((button) => button.icon)]);
-await writeAsset("stack", renderStack(THEME, icons));
-await writeAsset("contact", renderContact(THEME, await fetchAvatarDataUri()));
-for (const button of CONTACT_BUTTONS)
-  await writeAsset(
-    `button-${button.id}`,
-    renderContactButton(THEME, button, icons.get(button.icon)),
-  );
-for (const project of PROJECTS)
-  await writeAsset(`project-${project.id}`, renderProject(THEME, project));
+const avatarUri = await fetchAvatarDataUri();
+await mkdir(OUTPUT_DIR, { recursive: true });
+await writeSlice("header", { kind: "top", block: renderHeader(), origin: { x: 0, y: 0 } });
+await writeSlice("terminal", { kind: "full", block: renderTerminal(THEME) });
+await writeSlice("quote", { kind: "full", block: renderQuote(THEME) });
+for (const project of PROJECTS) await writeSlice(`project-${project.id}`, projectSlice(project));
+await writeSlice("stack", { kind: "full", block: renderStack(THEME, icons) });
+await writeSlice("stats", { kind: "full", block: renderStats(THEME, stats) });
+await writeSlice("contact", { kind: "full", block: renderContact(THEME, avatarUri) });
+for (const button of CONTACT_BUTTONS) {
+  const block = renderContactButton(THEME, button, icons.get(button.icon));
+  await writeSlice(`button-${button.id}`, {
+    kind: button.column,
+    block,
+    origin: halfSliceOrigin(button.column, block.width),
+  });
+}
+await writeSlice("footer", { kind: "bottom", block: renderFooter(), origin: { x: 0, y: 0 } });
 console.log("Assets written.", {
   contributions: stats.contributions,
   languages: stats.topLanguages.map(({ name }) => name),

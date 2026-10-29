@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="110" viewBox="0 0 1000 110" role="img" aria-label="Jexplore — Craft training — Web &amp; VR (In progress)">
+<svg xmlns="http://www.w3.org/2000/svg" width="1048" height="126" viewBox="0 0 1048 126" role="img" aria-label="Jexplore — Craft training — Web &amp; VR (In progress)">
 <style>
   .grow-x { transform-box: fill-box; transform-origin: left; animation: grow-x 1.2s cubic-bezier(.2,.8,.2,1) both; }
   .grow-y { transform-box: fill-box; transform-origin: bottom; animation: grow-y 1s cubic-bezier(.2,.8,.2,1) both; }
@@ -12,21 +12,16 @@
   @keyframes blink { 50% { opacity: 0; } }
   @keyframes pulse { 50% { opacity: .35; } }
   @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }</style>
-<defs><linearGradient id="brand-v" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F5C518"/><stop offset="1" stop-color="#E85D04"/></linearGradient></defs>
+<clipPath id="wrapper-clip"><path d="M0,-1 H1048 V127 H0 Z"/></clipPath>
+<g clip-path="url(#wrapper-clip)">
+  <path d="M0,-1 H1048 V127 H0 Z" fill="#010409"/>
+  <g transform="translate(24 16)"><defs><linearGradient id="brand-v" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F5C518"/><stop offset="1" stop-color="#E85D04"/></linearGradient></defs>
   <rect x=".5" y=".5" width="999" height="109" rx="12" fill="#161B22" stroke="#30363D"/>
-  <style>
-    .border-glint { animation: border-glint 7.56s linear infinite; }
-    @keyframes border-glint { to { stroke-dashoffset: -2193.1; } }
-  </style>
-  <defs><linearGradient id="border-glint-gradient" x1="0" y1="0" x2="1" y2="0">
-  <stop offset="0" stop-color="#F5C518"/>
-  <stop offset=".5" stop-color="#F59418"/>
-  <stop offset="1" stop-color="#E85D04"/>
-</linearGradient></defs>
-  <rect class="border-glint" x="1" y="1" width="998" height="108" rx="11" fill="none" stroke="url(#border-glint-gradient)" stroke-width="2" stroke-linecap="round" stroke-dasharray="160 2033.1"/>
   <rect x="22" y="24" width="4" height="62" rx="2" fill="url(#brand-v)"/>
   <text x="46" y="50" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#E6EDF3">Jexplore</text>
   <text x="46" y="82" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" fill="#8B949E">Craft training — Web &amp; VR</text>
   <text x="966" y="50" text-anchor="end" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="15" fill="#F5C518">Next.js · GraphQL · Zustand · TanStack Query</text>
-  <text x="966" y="82" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#8B949E"><tspan class="pulse" fill="#D29922">●</tspan> In progress</text>
+  <text x="966" y="82" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#8B949E"><tspan class="pulse" fill="#D29922">●</tspan> In progress</text></g>
+</g>
+<path d="M.5,0 V126 M1047.5,0 V126" fill="none" stroke="#30363D"/>
 </svg>

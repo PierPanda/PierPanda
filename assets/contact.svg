@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="240" viewBox="0 0 1000 240" role="img" aria-label="Pierre Bermudez — Let&#39;s grab a coffee. A project? A mission? A question?">
+<svg xmlns="http://www.w3.org/2000/svg" width="1048" height="256" viewBox="0 0 1048 256" role="img" aria-label="Pierre Bermudez — Let&#39;s grab a coffee. A project? A mission? A question?">
 <style>
   .grow-x { transform-box: fill-box; transform-origin: left; animation: grow-x 1.2s cubic-bezier(.2,.8,.2,1) both; }
   .grow-y { transform-box: fill-box; transform-origin: bottom; animation: grow-y 1s cubic-bezier(.2,.8,.2,1) both; }
@@ -16,7 +16,10 @@
     @keyframes spin { to { transform: rotate(360deg); } }
     .steam { animation: steam 2.4s ease-in-out infinite; }
     @keyframes steam { 0% { opacity: 0; transform: translateY(8px); } 50% { opacity: 1; } 100% { opacity: 0; transform: translateY(-10px); } }</style>
-<defs><linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+<clipPath id="wrapper-clip"><path d="M0,-1 H1048 V257 H0 Z"/></clipPath>
+<g clip-path="url(#wrapper-clip)">
+  <path d="M0,-1 H1048 V257 H0 Z" fill="#010409"/>
+  <g transform="translate(24 16)"><defs><linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
   <stop offset="0" stop-color="#F5C518"/>
   <stop offset=".5" stop-color="#F59418"/>
   <stop offset="1" stop-color="#E85D04"/>
@@ -44,5 +47,7 @@
     <path d="M80,60 h8 a14,14 0 0 1 0,28 h-8" fill="none" stroke="#E85D04" stroke-width="7"/>
     <path d="M0,50 h80 v34 a28,28 0 0 1 -28,28 h-24 a28,28 0 0 1 -28,-28 Z" fill="url(#brand)"/>
     <rect x="-14" y="116" width="122" height="6" rx="3" fill="#30363D"/>
-  </g>
+  </g></g>
+</g>
+<path d="M.5,0 V256 M1047.5,0 V256" fill="none" stroke="#30363D"/>
 </svg>

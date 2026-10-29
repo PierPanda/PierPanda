@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1048" height="84" viewBox="0 0 1048 84" role="img" aria-label="My job isn&#39;t just to build UIs — it&#39;s to build products that users remember. Passionate about performance (SSR, code splitting), accessibility, and designing large-scale front-end systems.">
+<style>
+  .grow-x { transform-box: fill-box; transform-origin: left; animation: grow-x 1.2s cubic-bezier(.2,.8,.2,1) both; }
+  .grow-y { transform-box: fill-box; transform-origin: bottom; animation: grow-y 1s cubic-bezier(.2,.8,.2,1) both; }
+  .reveal { animation: fade-in .3s ease-out both; }
+  .rise { animation: rise .8s cubic-bezier(.2,.8,.2,1) both; }
+  .pulse { animation: pulse 2s ease-in-out infinite; }
+  @keyframes fade-in { from { opacity: 0; } }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+  @keyframes grow-x { from { transform: scaleX(0); } }
+  @keyframes grow-y { from { transform: scaleY(0); } }
+  @keyframes blink { 50% { opacity: 0; } }
+  @keyframes pulse { 50% { opacity: .35; } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }</style>
+<clipPath id="wrapper-clip"><path d="M0,-1 H1048 V85 H0 Z"/></clipPath>
+<g clip-path="url(#wrapper-clip)">
+  <path d="M0,-1 H1048 V85 H0 Z" fill="#010409"/>
+  <g transform="translate(24 16)"><defs><linearGradient id="quote-bar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F5C518"/><stop offset="1" stop-color="#E85D04"/></linearGradient></defs>
+  <rect x="0" y="4" width="4" height="60" rx="2" fill="url(#quote-bar)"/>
+  <g font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" class="reveal">
+    <text x="24" y="28" fill="#E6EDF3">My job isn't just to build UIs — it's to build <tspan font-weight="700">products</tspan> that users remember.</text>
+    <text x="24" y="56" fill="#8B949E">Passionate about performance (SSR, code splitting), accessibility, and designing large-scale front-end systems.</text>
+  </g></g>
+</g>
+<path d="M.5,0 V84 M1047.5,0 V84" fill="none" stroke="#30363D"/>
+</svg>
