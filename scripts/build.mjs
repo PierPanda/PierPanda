@@ -13,27 +13,37 @@ const AVATAR_SIZE = 256;
 const MONO_FONT = `'JetBrains Mono','SF Mono',Menlo,Consolas,'Liberation Mono',monospace`;
 const SANS_FONT = `-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif`;
 const MONO_CHAR_RATIO = 0.6;
-const BRAND = { yellow: "#F5C518", amber: "#F59418", orange: "#E85D04", ink: "#0D1117" };
-const BRAND_STOPS = [BRAND.yellow, BRAND.amber, BRAND.orange];
-const BRAND_DEEP_STOPS = ["#C99A0A", "#C46F0B", "#A84203"];
+const BRAND = { light: "#BEF264", mid: "#4ADE80", strong: "#10B981", ink: "#0D1117" };
+const BRAND_STOPS = [BRAND.light, BRAND.mid, BRAND.strong];
+const BRAND_DEEP_STOPS = ["#86B33A", "#2F9E5E", "#0B7F5C"];
 
 const THEME = {
   panel: "#161B22",
   border: "#30363D",
   text: "#E6EDF3",
   muted: "#8B949E",
-  accent: BRAND.yellow,
-  accentStrong: BRAND.orange,
+  accent: BRAND.light,
+  accentStrong: BRAND.strong,
   inset: "#0D1117",
   live: "#3FB950",
   building: "#D29922",
+  pending: "#58A6FF",
 };
 
-const WRAPPER = { width: 1048, padding: 24, gap: 16, radius: 20, fill: "#010409" };
+const WRAPPER = { width: 1048, padding: 24, gap: 16, radius: 20, fill: "#12161D" };
+const WRAPPER_DECOR = {
+  dotSpacing: 24,
+  dotRadius: 1,
+  dotOpacity: 0.07,
+  haloColor: BRAND.strong,
+  haloOpacity: 0.16,
+  haloRadius: 560,
+  haloFlatten: 0.45,
+};
 const CONTENT_WIDTH = WRAPPER.width - 2 * WRAPPER.padding;
 const HALF_SLICE_WIDTH = WRAPPER.width / 2;
 const PROJECT_CARD_WIDTH = (CONTENT_WIDTH - WRAPPER.gap) / 2;
-const STATUS_LABELS = { live: "Live", building: "In progress" };
+const STATUS_LABELS = { live: "Live", building: "In progress", pending: "Awaiting release" };
 const PROJECTS = [
   {
     id: "detectivebox",
@@ -58,6 +68,31 @@ const PROJECTS = [
     summary: "Royalty-free music streaming",
     stack: ["React Router", "Vite", "Tailwind", "Postgres"],
     status: "live",
+  },
+  {
+    id: "royal-canin",
+    kind: "client",
+    name: "Royal Canin",
+    summary: "Mars · A/B testing, personalization & landing pages",
+    stack: ["AB Tasty", "GTM", "GA4"],
+    status: "building",
+  },
+  {
+    id: "jsa-bmb",
+    kind: "client",
+    name: "JSA-BMB",
+    summary: "JSA Bordeaux basketball app — tickets, streaming & team stats",
+    stack: ["Expo", "React Native", "React Router 8", "Nx", "Docker"],
+    status: "pending",
+  },
+  {
+    id: "ffmm",
+    kind: "personal",
+    name: "FFMM",
+    summary: "Portal for music & event professionals, with a self-hosted CMS",
+    stack: ["Next.js", "Payload CMS", "Tailwind", "Docker"],
+    status: "live",
+    column: "full",
   },
   {
     id: "bg-cleaner",
@@ -243,7 +278,34 @@ const WRAPPER_OUTLINES = {
 
 const isHalfSlice = (kind) => kind === "left" || kind === "right";
 
-function renderSlice({ kind, block, origin = { x: WRAPPER.padding, y: WRAPPER.gap } }) {
+function haloGradient({ id, centerY, shift }) {
+  const { haloColor, haloOpacity, haloRadius, haloFlatten } = WRAPPER_DECOR;
+  const centerX = WRAPPER.width / 2;
+  const flatten = `translate(${centerX} ${centerY}) scale(1 ${haloFlatten}) translate(${-centerX} ${-centerY})`;
+  return `<radialGradient id="${id}" gradientUnits="userSpaceOnUse" cx="${centerX}" cy="${centerY}" r="${haloRadius}" gradientTransform="${shift} ${flatten}">
+    <stop offset="0" stop-color="${haloColor}" stop-opacity="${haloOpacity}"/>
+    <stop offset="1" stop-color="${haloColor}" stop-opacity="0"/>
+  </radialGradient>`;
+}
+
+function wrapperBackground({ fillPath, placement, card }) {
+  const { dotSpacing, dotRadius, dotOpacity } = WRAPPER_DECOR;
+  const shift = `translate(${-placement.x} ${-placement.y})`;
+  const halos = card.haloCenters.map((centerY, index) => ({
+    id: `wrapper-halo-${index}`,
+    centerY,
+  }));
+  const layers = [WRAPPER.fill, ...halos.map(({ id }) => `url(#${id})`), "url(#wrapper-dots)"];
+  return `<defs>
+    ${halos.map(({ id, centerY }) => haloGradient({ id, centerY, shift })).join("\n    ")}
+    <pattern id="wrapper-dots" width="${dotSpacing}" height="${dotSpacing}" patternUnits="userSpaceOnUse" patternTransform="${shift}">
+      <circle cx="${dotSpacing / 2}" cy="${dotSpacing / 2}" r="${dotRadius}" fill="#FFFFFF" fill-opacity="${dotOpacity}"/>
+    </pattern>
+  </defs>
+  ${layers.map((fill) => `<path d="${fillPath}" fill="${fill}"/>`).join("\n  ")}`;
+}
+
+function renderSlice({ kind, block, origin, placement, card }) {
   const size = {
     width: isHalfSlice(kind) ? HALF_SLICE_WIDTH : WRAPPER.width,
     height: origin.y + block.height,
@@ -251,7 +313,7 @@ function renderSlice({ kind, block, origin = { x: WRAPPER.padding, y: WRAPPER.ga
   const outline = WRAPPER_OUTLINES[kind](size, WRAPPER.radius);
   const body = `<clipPath id="wrapper-clip"><path d="${outline.fill}"/></clipPath>
 <g clip-path="url(#wrapper-clip)">
-  <path d="${outline.fill}" fill="${WRAPPER.fill}"/>
+  ${wrapperBackground({ fillPath: outline.fill, placement, card })}
   <g transform="translate(${origin.x} ${origin.y})">${block.body}</g>
 </g>
 <path d="${outline.border}" fill="none" stroke="${THEME.border}"/>`;
@@ -383,7 +445,7 @@ function renderTerminal(theme) {
 
 function renderQuote(theme) {
   const size = { width: CONTENT_WIDTH, height: 68 };
-  const body = `<defs><linearGradient id="quote-bar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${BRAND.yellow}"/><stop offset="1" stop-color="${BRAND.orange}"/></linearGradient></defs>
+  const body = `<defs><linearGradient id="quote-bar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${BRAND.light}"/><stop offset="1" stop-color="${BRAND.strong}"/></linearGradient></defs>
   <rect x="0" y="4" width="4" height="60" rx="2" fill="url(#quote-bar)"/>
   <g font-family="${SANS_FONT}" font-size="17" class="reveal">
     <text x="24" y="28" fill="${theme.text}">My job isn't just to build UIs — it's to build <tspan font-weight="700">products</tspan> that users remember.</text>
@@ -404,7 +466,7 @@ function statusText(theme, { status, x, y, fontSize }) {
 
 function renderClientRow(theme, project) {
   const size = { width: 1000, height: 110 };
-  const body = `<defs><linearGradient id="brand-v" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${BRAND.yellow}"/><stop offset="1" stop-color="${BRAND.orange}"/></linearGradient></defs>
+  const body = `<defs><linearGradient id="brand-v" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${BRAND.light}"/><stop offset="1" stop-color="${BRAND.strong}"/></linearGradient></defs>
   ${panelFrame(theme, size)}
   <rect x="22" y="24" width="4" height="62" rx="2" fill="url(#brand-v)"/>
   <text x="46" y="50" font-family="${SANS_FONT}" font-size="26" font-weight="700" fill="${theme.text}">${escapeXml(project.name)}</text>
@@ -419,7 +481,8 @@ function renderClientRow(theme, project) {
 }
 
 function renderProjectCard(theme, project) {
-  const size = { width: PROJECT_CARD_WIDTH, height: 190 };
+  const width = project.column === "full" ? CONTENT_WIDTH : PROJECT_CARD_WIDTH;
+  const size = { width, height: 190 };
   const contentRight = size.width - 32;
   const body = `<defs>${brandGradient("brand")}</defs>
   ${panelFrame(theme, size)}
@@ -601,7 +664,7 @@ function coffeeCup(theme, origin) {
   );
   return `<g transform="translate(${origin.x} ${origin.y})">
     ${steam.join("")}
-    <path d="M80,60 h8 a14,14 0 0 1 0,28 h-8" fill="none" stroke="${BRAND.orange}" stroke-width="7"/>
+    <path d="M80,60 h8 a14,14 0 0 1 0,28 h-8" fill="none" stroke="${BRAND.strong}" stroke-width="7"/>
     <path d="M0,50 h80 v34 a28,28 0 0 1 -28,28 h-24 a28,28 0 0 1 -28,-28 Z" fill="url(#brand)"/>
     <rect x="-14" y="116" width="122" height="6" rx="3" fill="${theme.border}"/>
   </g>`;
@@ -733,35 +796,71 @@ async function loadIcons(slugs) {
 
 const writeAsset = (name, svg) => writeFile(new URL(`${name}.svg`, OUTPUT_DIR), svg);
 
-const writeSlice = (name, slice) => writeAsset(name, renderSlice(slice));
+const DEFAULT_ORIGIN = { x: WRAPPER.padding, y: WRAPPER.gap };
 
 function projectSlice(project) {
   const block = renderProject(THEME, project);
-  if (project.kind === "client") return { kind: "full", block };
-  return { kind: project.column, block, origin: halfSliceOrigin(project.column, block.width) };
+  const name = `project-${project.id}`;
+  const isFullWidth = project.kind === "client" || project.column === "full";
+  if (isFullWidth) return { name, kind: "full", block };
+  return {
+    name,
+    kind: project.column,
+    block,
+    origin: halfSliceOrigin(project.column, block.width),
+  };
+}
+
+function buttonSlice(button) {
+  const block = renderContactButton(THEME, button, icons.get(button.icon));
+  return {
+    name: `button-${button.id}`,
+    kind: button.column,
+    block,
+    origin: halfSliceOrigin(button.column, block.width),
+  };
+}
+
+function placeSlices(slices) {
+  const placed = [];
+  let cardHeight = 0;
+  for (const slice of slices) {
+    const origin = slice.origin ?? DEFAULT_ORIGIN;
+    if (slice.kind === "right") {
+      const leftHalf = placed.at(-1);
+      placed.push({
+        ...slice,
+        origin,
+        placement: { x: HALF_SLICE_WIDTH, y: leftHalf.placement.y },
+      });
+      continue;
+    }
+    placed.push({ ...slice, origin, placement: { x: 0, y: cardHeight } });
+    cardHeight += origin.y + slice.block.height;
+  }
+  return { placed, cardHeight };
 }
 
 const stats = await loadStats();
 const stackIcons = STACK_GROUPS.flatMap((group) => group.items.map((item) => item.icon));
 const icons = await loadIcons([...stackIcons, ...CONTACT_BUTTONS.map((button) => button.icon)]);
 const avatarUri = await fetchAvatarDataUri();
+const header = renderHeader();
+const footer = renderFooter();
+const { placed, cardHeight } = placeSlices([
+  { name: "header", kind: "top", block: header, origin: { x: 0, y: 0 } },
+  { name: "terminal", kind: "full", block: renderTerminal(THEME) },
+  { name: "quote", kind: "full", block: renderQuote(THEME) },
+  ...PROJECTS.map(projectSlice),
+  { name: "stack", kind: "full", block: renderStack(THEME, icons) },
+  { name: "stats", kind: "full", block: renderStats(THEME, stats) },
+  { name: "contact", kind: "full", block: renderContact(THEME, avatarUri) },
+  ...CONTACT_BUTTONS.map(buttonSlice),
+  { name: "footer", kind: "bottom", block: footer, origin: { x: 0, y: 0 } },
+]);
+const card = { haloCenters: [header.height, cardHeight - footer.height] };
 await mkdir(OUTPUT_DIR, { recursive: true });
-await writeSlice("header", { kind: "top", block: renderHeader(), origin: { x: 0, y: 0 } });
-await writeSlice("terminal", { kind: "full", block: renderTerminal(THEME) });
-await writeSlice("quote", { kind: "full", block: renderQuote(THEME) });
-for (const project of PROJECTS) await writeSlice(`project-${project.id}`, projectSlice(project));
-await writeSlice("stack", { kind: "full", block: renderStack(THEME, icons) });
-await writeSlice("stats", { kind: "full", block: renderStats(THEME, stats) });
-await writeSlice("contact", { kind: "full", block: renderContact(THEME, avatarUri) });
-for (const button of CONTACT_BUTTONS) {
-  const block = renderContactButton(THEME, button, icons.get(button.icon));
-  await writeSlice(`button-${button.id}`, {
-    kind: button.column,
-    block,
-    origin: halfSliceOrigin(button.column, block.width),
-  });
-}
-await writeSlice("footer", { kind: "bottom", block: renderFooter(), origin: { x: 0, y: 0 } });
+for (const slice of placed) await writeAsset(slice.name, renderSlice({ ...slice, card }));
 console.log("Assets written.", {
   contributions: stats.contributions,
   languages: stats.topLanguages.map(({ name }) => name),
