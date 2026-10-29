@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="488" viewBox="0 0 1000 488" role="img" aria-label="pierre@github — Front-End / Full-Stack Developer based in France, open to opportunities">
+<style>
+  .grow-x { transform-box: fill-box; transform-origin: left; animation: grow-x 1.2s cubic-bezier(.2,.8,.2,1) both; }
+  .grow-y { transform-box: fill-box; transform-origin: bottom; animation: grow-y 1s cubic-bezier(.2,.8,.2,1) both; }
+  .reveal { animation: fade-in .3s ease-out both; }
+  .rise { animation: rise .8s cubic-bezier(.2,.8,.2,1) both; }
+  .pulse { animation: pulse 2s ease-in-out infinite; }
+  @keyframes fade-in { from { opacity: 0; } }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+  @keyframes grow-x { from { transform: scaleX(0); } }
+  @keyframes grow-y { from { transform: scaleY(0); } }
+  @keyframes blink { 50% { opacity: 0; } }
+  @keyframes pulse { 50% { opacity: .35; } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }</style>
+<rect x=".5" y=".5" width="999" height="487" rx="12" fill="#161B22" stroke="#30363D"/>
+  <circle cx="28" cy="24" r="6" fill="#FF5F57"/><circle cx="48" cy="24" r="6" fill="#FEBC2E"/><circle cx="68" cy="24" r="6" fill="#28C840"/>
+  <text x="500" y="29" text-anchor="middle" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="14" fill="#8B949E">pierre@github: ~</text>
+  <line x1="0" y1="48" x2="1000" y2="48" stroke="#30363D"/>
+  <g font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="18"><g class="reveal" style="animation-delay:0.20s"><text x="32" y="92"><tspan fill="#F5C518">pierre@github</tspan> <tspan fill="#8B949E">~</tspan> <tspan fill="#E85D04">$</tspan> <tspan fill="#E6EDF3">whoami</tspan></text></g>
+  <g class="reveal" style="animation-delay:0.38s"><text x="56" y="122"><tspan fill="#F5C518">place</tspan></text><text x="172" y="122"><tspan fill="#E6EDF3">France</tspan></text></g>
+  <g class="reveal" style="animation-delay:0.56s"><text x="56" y="152"><tspan fill="#F5C518">role</tspan></text><text x="172" y="152"><tspan fill="#E6EDF3">Front-End / Full-Stack Developer</tspan></text></g>
+  <g class="reveal" style="animation-delay:0.74s"><text x="56" y="182"><tspan fill="#F5C518">stack</tspan></text><text x="172" y="182"><tspan fill="#E6EDF3">React · Next.js · React Router · Node.js · TypeScript</tspan></text></g>
+  <g class="reveal" style="animation-delay:0.92s"><text x="56" y="212"><tspan fill="#F5C518">focus</tspan></text><text x="172" y="212"><tspan fill="#E6EDF3">High-performance interfaces · UX-driven</tspan></text></g>
+  <g class="reveal" style="animation-delay:1.10s"><text x="56" y="242"><tspan fill="#F5C518">status</tspan></text><text x="172" y="242"><tspan fill="#3FB950">Open to opportunities and projects</tspan></text></g>
+  <g class="reveal" style="animation-delay:1.28s"></g>
+  <g class="reveal" style="animation-delay:1.46s"><text x="32" y="302"><tspan fill="#F5C518">pierre@github</tspan> <tspan fill="#8B949E">~</tspan> <tspan fill="#E85D04">$</tspan> <tspan fill="#E6EDF3">cat principles.md</tspan></text></g>
+  <g class="reveal" style="animation-delay:1.64s"><text x="56" y="332"><tspan fill="#E85D04">▸</tspan> <tspan fill="#E6EDF3">Performance-first</tspan></text><text x="372" y="332"><tspan fill="#8B949E">→ SSR, lazy loading, Lighthouse</tspan></text></g>
+  <g class="reveal" style="animation-delay:1.82s"><text x="56" y="362"><tspan fill="#E85D04">▸</tspan> <tspan fill="#E6EDF3">TypeScript by default</tspan></text><text x="372" y="362"><tspan fill="#8B949E">→ Fewer bugs, more peace of mind</tspan></text></g>
+  <g class="reveal" style="animation-delay:2.00s"><text x="56" y="392"><tspan fill="#E85D04">▸</tspan> <tspan fill="#E6EDF3">Design &amp; UX</tspan></text><text x="372" y="392"><tspan fill="#8B949E">→ Tailwind, animations, details</tspan></text></g>
+  <g class="reveal" style="animation-delay:2.18s"><text x="56" y="422"><tspan fill="#E85D04">▸</tspan> <tspan fill="#E6EDF3">Maintainability</tspan></text><text x="372" y="422"><tspan fill="#8B949E">→ Solid architecture, tests</tspan></text></g>
+  <g class="reveal" style="animation-delay:2.36s"><text x="32" y="452"><tspan fill="#F5C518">pierre@github</tspan> <tspan fill="#8B949E">~</tspan> <tspan fill="#E85D04">$</tspan> <tspan fill="#E6EDF3"></tspan></text></g></g>
+  <rect x="226.4" y="437.6" width="9.9" height="18" fill="#F5C518" style="animation: fade-in 0s 2.54s both, blink 1.1s steps(1) 2.54s infinite"/>
+</svg>

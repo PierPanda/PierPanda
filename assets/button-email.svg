@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="56" viewBox="0 0 240 56" role="img" aria-label="Email me">
+<style>
+  .grow-x { transform-box: fill-box; transform-origin: left; animation: grow-x 1.2s cubic-bezier(.2,.8,.2,1) both; }
+  .grow-y { transform-box: fill-box; transform-origin: bottom; animation: grow-y 1s cubic-bezier(.2,.8,.2,1) both; }
+  .reveal { animation: fade-in .3s ease-out both; }
+  .rise { animation: rise .8s cubic-bezier(.2,.8,.2,1) both; }
+  .pulse { animation: pulse 2s ease-in-out infinite; }
+  @keyframes fade-in { from { opacity: 0; } }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+  @keyframes grow-x { from { transform: scaleX(0); } }
+  @keyframes grow-y { from { transform: scaleY(0); } }
+  @keyframes blink { 50% { opacity: 0; } }
+  @keyframes pulse { 50% { opacity: .35; } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }</style>
+<rect x=".5" y=".5" width="239" height="55" rx="12" fill="#161B22" stroke="#30363D"/>
+  <svg x="24" y="17" width="22" height="22" viewBox="0 0 24 24"><path fill="#EA4335" fill-rule="nonzero" d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+  <text x="60" y="34" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="17" fill="#E6EDF3">Email me</text>
+  <text x="216" y="34" text-anchor="end" font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="17" fill="#F5C518">→</text>
+</svg>

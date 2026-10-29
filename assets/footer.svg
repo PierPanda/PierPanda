@@ -1,12 +1,36 @@
-<svg width="900" height="100" viewBox="0 0 900 100" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%"   stop-color="#F5C518"/>
-      <stop offset="50%"  stop-color="#F59418"/>
-      <stop offset="100%" stop-color="#E85D04"/>
-    </linearGradient>
-  </defs>
-
-  <path d="M0,40 C150,80 300,10 450,50 C600,90 750,20 900,55 L900,100 L0,100 Z" fill="url(#grad)" opacity="0.6"/>
-  <path d="M0,60 C180,20 350,80 500,45 C680,10 800,65 900,35 L900,100 L0,100 Z" fill="url(#grad)"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="110" viewBox="0 0 1200 110" aria-hidden="true">
+<style>
+  .grow-x { transform-box: fill-box; transform-origin: left; animation: grow-x 1.2s cubic-bezier(.2,.8,.2,1) both; }
+  .grow-y { transform-box: fill-box; transform-origin: bottom; animation: grow-y 1s cubic-bezier(.2,.8,.2,1) both; }
+  .reveal { animation: fade-in .3s ease-out both; }
+  .rise { animation: rise .8s cubic-bezier(.2,.8,.2,1) both; }
+  .pulse { animation: pulse 2s ease-in-out infinite; }
+  @keyframes fade-in { from { opacity: 0; } }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+  @keyframes grow-x { from { transform: scaleX(0); } }
+  @keyframes grow-y { from { transform: scaleY(0); } }
+  @keyframes blink { 50% { opacity: 0; } }
+  @keyframes pulse { 50% { opacity: .35; } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }</style>
+<defs><linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#F5C518"/>
+  <stop offset=".5" stop-color="#F59418"/>
+  <stop offset="1" stop-color="#E85D04"/>
+</linearGradient><linearGradient id="brand-deep" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#C99A0A"/>
+  <stop offset=".5" stop-color="#C46F0B"/>
+  <stop offset="1" stop-color="#A84203"/>
+</linearGradient></defs>
+  <style>
+    .wave-back { animation: wave-back 16s linear infinite; }
+    @keyframes wave-back { to { transform: translateX(-600px); } }
+  </style>
+  <clipPath id="wave-back"><path class="wave-back" d="M0,46 q150,-28 300,0 t300,0 t300,0 t300,0 t300,0 t300,0 V110 H0 Z"/></clipPath>
+  <rect width="1200" height="110" fill="url(#brand-deep)" clip-path="url(#wave-back)"/>
+  <style>
+    .wave-front { animation: wave-front 10s linear infinite; }
+    @keyframes wave-front { to { transform: translateX(-400px); } }
+  </style>
+  <clipPath id="wave-front"><path class="wave-front" d="M0,64 q100,-28 200,0 t200,0 t200,0 t200,0 t200,0 t200,0 t200,0 t200,0 V110 H0 Z"/></clipPath>
+  <rect width="1200" height="110" fill="url(#brand)" clip-path="url(#wave-front)"/>
 </svg>
